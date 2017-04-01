@@ -1,0 +1,4096 @@
+ ============== abbreviations =============
+If you are abbreviating commands, you must be prepared to change
+your habitual abbreviations when new commands are introduced.
+New commands may make old abbreviations ambiguous.
+ ============== abort =============
+To cancel a CIX command, enter <control>X.  If, for instance, you have
+disabled the More? prompt by setting your terminal pagelength to 0, you could
+enter ^X to cancel a large volume of output; note that this will not take
+effect immediately, due to the buffering between the CIX software and your
+terminal.
+
+To cancel your input at a prompt and start again, enter <control>U.  This may
+be more convenient than entering a number of Backspace characters.
+ ============== about.netfind =============
+==========
+internet/discoveries #11, from steveh, 682 chars, Nov 15 18:35 92
+----------
+From: "Neil S. Briscoe" <neil@salmon.demon.co.uk>
+Date: Sun, 15 Nov 1992 18:05:42 GMT
+--------------------------
+Description: Netfind
+
+Address:     bruno.cs.colorado.edu
+
+Interest:    E-mail directory
+
+Access:      
+
+telnet bruno.cs.colorado.edu
+-OR-
+telnet mudhoney.micro.umn.edu
+login as netfind
+
+Comments:
+
+This will allow you to search the whole internet for addresses.
+Netfind is very persistant but will fail on hosts that don't allow
+finger access (such as most British Universities).  The bruno site is
+more verbose in it's search, but does have an options feature which
+may allow you to turn this off.  The mudhoney site is quiet and does
+not allow you to select options.
+
+ ============== absence =============
+Command:   ABSENCE -- Notify someone who wants to send you mail of your
+           absence.
+
+Prompts:   Main:  Read:  Mail:
+
+Format:    ABSENCE [FIRST <dd/mm/yy>] [LAST <dd/mm/yy>]
+
+Example:   absence last 25/8/91
+
+Usage:     If you have no existing ABSENCE record, specify FIRST and/or LAST
+           in either order.  If you specify FIRST only, you are absent from
+           the specified date until further notice.  If you specify LAST only,
+           you are absent from the current time till the end of the specified
+           date.  If you specify both parameters, you are absent from the
+           FIRST date till the end of the LAST date.
+
+           To delete your ABSENCE record, specify a LAST date before the
+           current date, or any FIRST date.
+
+           To change your existing ABSENCE record, re-issue the ABSENCE
+           command.  It is generally best to first delete your ABSENCE record,
+           but you may safely update your existing ABSENCE record by
+           specifying both FIRST and LAST.
+
+           To display your ABSENCE record, issue the ABSENCE command with no
+           parameters.  This is a good candidate for your profile.
+
+Notes:     1. Dates are inclusive (the time on the LAST date is 23:59); but
+              see note 4.
+
+           2. Anyone who attempts to mail you when you are absent receives one
+              of the following messages after issuing the TO command:
+
+              <username> is away from <date> to <date> - continue?
+              <username> is away from <date> until further notice - continue?
+
+              The default response is N (No).
+
+              However, if someone mails you by using a CIX script, the message
+              is not displayed and the memo is always sent.
+
+           3. Users who send you binary mail (by using the BINMAIL command)
+              are not notified of your absence.
+
+           4. Times are held in the ABSENCE record in GMT and adjusted to BST
+              (British Summer Time) if necessary.  For example, if you enter:
+
+              ABSENCE FIRST 1/8/91 LAST 25/8/91
+
+              you are absent from 01:00 BST on the 1st of August (00:00 GMT)
+              to 00:59 BST on the 26th (23:59 GMT on the 25th).
+ ============== add =============
+Command:   ADD -- join a new participant to a conference or add a new topic.
+
+Prompt:    Mod:
+
+See also:  REMOVE, NOTE
+
+Format:    ADD PARTICIPANT <username> [<username>...]
+
+Format:    ADD TOPIC
+
+Usage:     When you enter the ADD TOPIC command, CIX prompts you for the name
+           of the topic, asks if you want to keep files in the topic, and
+           prompts you for the description of the topic.
+
+Note:      Certain topic names are reserved for CIX and cannot be used.
+ ============== addpart =============
+COMMAND:        ADD PARTICIPANT
+PROMPT:         Mod:
+SYNTAX:         ADD PARTICIPANT <username> [<userneme>...]
+PURPOSE:        Join new participants to a conference or topic?
+
+
+When you moderate a conference it's useful to be able to add
+particiapants yourself. This might be because the conference is
+closed, and thus potential participants can't join themselves, or you
+might simply want to to start a conference off with a few interested
+people.
+
+Some people don't like to be joined to conferences without their
+permission, or might only wish to join certain types of conferences.
+For this reason every user can compose a note to be displayed to the
+moderator telling of their wishes. You should respect the contents of
+this note.
+
+See also:  REMOVE, NOTE
+ ============== addprompt =============
+Add-actions
+ 
+After typing in the text of your message, you have the following options:
+   Add.................Add the text as a message (or comment) and 
+                       clear your scratchpad.
+   CLear...............Clear your scratchpad and return to the Read: prompt.
+   COnt................Continue entering the message with the word wrapping
+                       entry program, and append new text to the end of the
+                       scratchpad.
+   Edit................Invoke the text editor to edit or append text.
+   Help................Display this message.
+   List................Display the contents of the scratchpad.
+   Quit................Return to the Read: prompt without adding a message.
+                       Your scratchpad will be left intact.
+ ============== all =============
+read all 
+read all quick
+
+     The "all" option of "read" will display all unseen messages in all
+conferences you are a member of. The "quick" option makes "read all" not
+display the "Comments" lines of the headers
+
+FILE READ ALL ; send all new messages to your scratchpad
+Mail: FILE ALL ; send all new mail to scratchpad
+
+ ============== allaboutme =============
+Command:   ALLABOUTME -- list your billing details.
+
+Prompt:    Main:
+
+Format:    ALLABOUTME
+
+See also:  BILLING
+
+Usage:     ALLABOUTME lists the billing details you supplied to CIX when you
+           registered, and a few other items, such as the total number of
+           calls you've made to CIX.
+ ============== ambiguous =============
+Ambiguous command.
+An abbreviation is ambiguous if it is a prefix of two different
+commands. If using verbose prompts you are told what the commands
+are.
+
+If you are abbreviating commands, you must be prepared to change
+your habitual abbreviations, when new commands are introduced.
+ ============== ameol =============
+Ameol Help file
+
+Ameol version 2 is the only officially supported OffLine Reader for CIX.
+
+The minimum system requirements for Ameol2 are Windows 3.1 (running in
+Enhanced Mode), Windows/NT 3.5/4, Windows 95, and at least 8Mb RAM and 
+10Mb hard disk space. There is a native 32-bit version of Ameol2 for NT 
+and Windows 95.
+
+Ameol is free to CIX users and is supplied on CD to all new users. 
+Existing CIX users can also obtain the CD for free by mailing their name 
+and address to brochure@cix.co.uk.
+
+Technical support and general questions should be directed to the 
+'ameol.support' conference using the Report facility - select Send Support
+Message from the Help menu.
+
+You will always find the latest version of Ameol2 in
+ameol.support/files. 
+
+Please join the 'ameol.support' conference for more details.
+
+ ============== ansi =============
+COMMAND:        ANSI
+PROMPT:         Opt:
+SYNTAX:         ANSI N Q                ;Don't use ANSI.
+            or  ANSI Y Y Q              ;Use ANSI default codes.
+            or  ANSI Y N                ;Use other ANSI codes,
+                <codes>                 ;follow the prompts,
+                Q                       :see below.
+PURPOSE:        Allows ANSI if your terminal supports it.
+
+If your terminal can use ANSI or VT100 codes (for colour and other
+attributes), you may use the CIX command OPTION ANSI Y Y Q. (Meaning
+Yes, use ANSI codes and Yes, use the default codes.)  This causes CIX
+prompts and message headers to stand out from the rest of the text.
+
+To switch off ANSI codes, use the command OPTION ANSI N Q.
+
+Please note that the ANSI option affects only the output from CIX.
+You can't put ANSI characters into messages.
+
+To use ANSI codes other than the defaults, use the command OPTION
+ANSI Y N. CIX then prompts you for the code it should send before
+prompts and message headers:
+
+   PrePrompt code ESC[??m
+
+You should enter only the ?? part, as explained below; CIX
+automatically sends the parts of the code which surround your entry.
+CIX then prompts you similarly for the code it should send after
+prompts and message headers; this code controls the display of text.
+Finally, come out of the OPTION command by entering QUIT.
+
+The ANSI attribute codes are:        The ANSI colour codes are:
+
+                                              Foreground   Background
+
+No attributes            0 or null   Black           30           40
+High intensity or bold   1           Red             31           41
+Underline                4           Green           32           42
+Blinking                 5           Yellow          33           43
+Reverse                  7           Blue            34           44
+                                     Magenta         35           45
+                                     Cyan            36           46
+                                     White           37           47
+
+Results depend on the capabilities of your terminal; for instance, it
+may not support the "underline" code.  Your terminal should ignore any
+code it doesn't support.
+
+To combine several values, separate them with a semicolon.  For
+instance:
+
+   ;1;33;40   (PrePrompt)  Bright yellow on black
+   ;37        (PostPrompt) White on black
+
+These are the default codes which CIX normally uses when OPTION ANSI Y
+Y is in effect.  Notice that the first code for each string is null
+(the strings start with the semicolon separator).  This means the
+"bright" attribute is switched off after prompts and message headers,
+so other text is displayed in normal intensity.  (The null code is not
+strictly necessary for the PrePrompt code in this instance.)
+
+If you change the codes, these are saved as the default values for
+your current CIX session: you cannot revert to the CIX defaults by using
+OPTION ANSI Y Y QUIT.  You may still, of course, switch off ANSI codes
+altogether by using OPTION ANSI N QUIT.
+
+To set ANSI codes from your profile, you must put them on separate lines,
+just as if CIX were prompting you.  For instance:
+
+   OPTION ANSI Y N
+   33
+   34
+   QUIT
+
+/* ANSI help file updated 26/3/93 */
+ ============== arcscratch =============
+Command:   ARCSCRATCH - Compresses your scratchpad
+
+Usage:     This command compresses the contents of your
+           scratchpad using the ARC compression system,
+           transfering the contents of your scratchpad to a
+           'scratchp.arc' file.  You can then download and
+           unarc the file locally saving you download and
+           online time.
+
+Example:   From Main: prompt type    arcscratch
+             you will receive the message
+
+           Arcing... (to abort ^X^X^X)
+           .....
+           Archived Scratchpad is **** characters
+           Your scratchpad has been deleted
+           Main:
+
+Notes:     Try this command with a small file first to
+           ensure it's compatible with your copy of ARC!
+           Arcing is extremely CPU intensive and will
+           affect other users negatively.  If you have MNP5
+           (recommended), don't ARC, please!
+
+           Once you have downloaded your archived scratchpad
+           you will receive the message
+
+           OK to delete the downloaded scratchpad-file?
+           (y/n)?
+
+Usage:     If you already have an archived scratchpad file
+           and you attempt to create another archive
+           scratchpad then the old one will be deleted.
+
+Example :  Main:arcscratch
+           Removed old ARChive
+           Arcing... (to abort ^X^X^X)
+           .....
+           Archived Scratchpad is **** characters
+           Your scratchpad has been deleted
+           Main:
+
+           When you log off you will be given the
+           opportunity to delete your archived scratchpad
+
+Example:   Main:bye
+           OK to delete your scratchpad.arc? (y/n)? y
+           sthorn, you have been online 3:39 on ttya1
+           Goodbye from CIX     !!!HANGUP NOW!!!
+
+Notes:     If you have downloaded your archived scratchpad,
+           then it's a good idea to delete it.  No charges
+           are made for storage, so we do ask you delete
+           your archived scratchpad before you log off.
+           When you have downloaded your archived scratchpad
+           you will be asked if you wish to delete it, and
+           also again before you log off.
+
+see also:  FILE, KILLARC, KILLSCRATCH, SCRATCHSIZE,
+           DOWNLOAD, UPLOAD
+ ============== author =============
+Alastair Mayer was largely responsible for the original system architecture
+and most of the original code.
+Peter Jaspers-Fayer coded the 'help' routine, and Bob McQueen coded
+the (original) verbose editor (with subsequent modifications by Greg 
+Blair and A. Mayer).
+Overall system outline, and user interface design, was a collaboration
+between A. Mayer, B. McQueen, P. Jaspers-Fayer and Carl Mohan, who 
+also wrote the users manual.
+The suggestions and complaints of the early users are also acknowledged.
+
+Subsequent devolpment (COSY 3) was also largely done by Alastair Mayer,
+with additional coding by Tom Smith and Keith Winter.  Tom Smith is
+also responsible for automating several of the system manager functions,
+and the 'verbose' interface for the new editor.
+Again, the suggestions of users are acknowledged, as are the efforts of
+Bob McQueen, who 'ran interference' for us software gnomes.
+The current editor is based on one presented in Kernighan and Plauger's
+book, "Software Tools in Pascal", but rewritten in 'C'.  The KERMIT file
+transfer utility was developed at Columbia University.
+
+People who have worked on the code (in greater or smaller amount) at CIX:
+
+Terry Thompson
+DJ Walker Morgan
+Frank Thornley
+Anders Heerfordt
+Giles Todd
+Pete Bentley
+Mike Rogers
+Dave Johnson
+Gordon Hundley
+Matthew Sims
+Paul Gardner
+ ============== autorecent =============
+
+COMMAND:        AUTORECENT
+PROMPT:         Opt:
+SYNTAX:         AUTORECENT YES | ON
+PURPOSE:        Join a conf and skip to user defined date/message no.
+
+In conjunction with the RECENT command you can arrange for only the
+last x number of messages to be marked as new. This is particularly
+useful when using an OLR (offline reader), when rejoining a busy
+conference.
+
+AUTORECENT should be set up in your profile - without it the RECENT
+command won't work automatically.
+
+/* AUTORECENT help file updated 26/3/93 */
+
+ ============== backward =============
+read backward [ <number> [ to <number> ]] 
+ 
+    The "backward" option of "read" allows you to reverse the order in which
+the messages are normally displayed.  
+ 
+    To resume reading in the forward direction, use the "forward" command.
+ ============== billing =============
+Online billing
+--------------
+
+To avoid drowning you (and us) in itemised bills, we have an online billing
+system.  This allows you to get the previous 3 month's bills and a bill for
+the present month up to 4:30am today.
+
+The commands are: BILLING, FILEBILLING.
+
+Getting an itemised bill
+------------------------
+
+At the Main: prompt, enter BILLING.  CIX asks you if you want the bill in
+ascii (continuous output, for logging to a disk file) or paged (for perusing
+online).  Once you have selected A or P, CIX then asks you for a month.  Just
+press the return key for the present month, or enter the month name, e.g., Jan
+Feb Mar Apr May etc.  CIX then asks you for a year; again, just press return
+for the present year.  The bill will then be displayed, itemised for every
+login.
+
+To write the bill to your scratchpad instead of to your terminal, enter
+FILEBILLING.  CIX then prompts you for the month and year.
+ ============== binmail =============
+COMMAND:        BINMAIL
+PROMPT:         Mail:
+SYNTAX:         BINMAIL <username> <filename>
+PURPOSE:        Send a file from your directory to another user.
+
+BINMAIL is one of the most useful commands on CIX. It allows you to
+send files from your personal directory to that of any other user.
+These files can be anything at all - text, source code, complete
+programs etc. Files are stored in users binmail directories until their
+timestamp (you can see this when you use the DIR command) is more than
+30 days old.
+
+BINMAIL is not for sending Binary files in mail message out of CIX, 
+across the internet. It is an internal to CIX thing only. Please see 
+HELP EXTERNALMAIL for information on how to send a binary file outside 
+CIX.
+
+It is principally used in order to make downloading at the other end
+simple, or when the text file involved is rather larger than can
+comfortably be taken in at one reading.
+
+You are not notified on receiving BINMAIL so it's a good idea to send
+a MAIL message too, to let the recipient know the fact that they have
+received something, and the name of the file sent.
+
+From the Mail prompt:
+BINMAIL <username> <filename> : send private file to user
+DIR                           : show private files
+FUL                           : upload private file(s)
+FDL <filename>                : download private file(s)
+ERAse <filename>              : erase private file(s)
+REName <oldname> <newname>    : rename private file
+FAL <filename>                : list contents of .ARC or .ZIP file
+EXPORT <filename>             : copy private file to conference topic
+
+Sequence to send binary mail:
+MAIL                          : to enter mail system
+DIR                           : to check the filename
+FUL                           : to upload private file(s)
+BINMAIL <user> <filename>     : to send the file
+MAIL <user>                   : Tell the recipient what you've sent
+
+Sequence for receiver:
+MAIL                          : to enter mail system
+DIR                           : to see received files
+FDL <filename>                : to download file(s)
+ERAse <filename>              : to delete file(s)
+ ============== break =============
+The "cancel command" or "interrupt character" is ^X.
+Previously it has been ^\ or ^|.
+
+Most actions can be aborted with ^X, but the utility
+is not made fail-safe, which means that strange effects
+may infrequently result.
+
+Of course in the full screen editor ^X is used to
+move the cursor down.
+
+ ============== buddy =============
+OPT BUDDY N Q ; turn off buddy help
+
+ ============== bye =============
+Command:   BYE -- Terminate your CIX session.
+
+Prompts:   Main:  Read:  Mail:
+
+Format:    BYE
+
+See also:  LOGIN
+
+Usage:     When you have finished your CIX session, enter "bye".  If there is
+           unread mail in your Inbasket, CIX asks you if you still want to log
+           off.  If you have a scratchpad and/or an arc'd scratchpad, CIX asks
+           you if you want to delete it.
+
+Note:      If you want to retain your connection to CIX, so you may log in to
+           another account, use instead the LOGIN command at the Main: prompt.
+ ============== cancel =============
+The "cancel command" or "interrupt character" is ^X.
+Previously it has been ^\ or ^|.
+
+Most actions can be aborted with ^X, but the utility
+is not made fail-safe, which means that strange effects
+may infrequently result.
+
+Of course in the full screen editor ^X is used to
+move the cursor down.
+
+ ============== chat =============
+Command:   CHAT - allows you to listen and talk to other
+           users without using mail messages or conferences
+           messages.
+
+Usage:     Lets you listen and talk to other users who are
+           online at the same time as you, without using
+           mail messages or conferences messages.
+
+Example:   From Main:  prompt type    chat on
+                Read:  prompt type    chat on
+                Mail:  prompt type    chat on
+                Option: prompt type   chat on
+
+           This will turn 'chat on' for your current CIX
+           session only.  If you always want to listen for
+           Chat, add 'chat on' to your profile.
+
+           CHAT ON will read your incoming chat, allowing
+           people to say they want to chat with you or pass
+           you a message.  The system will always check what
+           messages are waiting before you are due to make
+           enter a command at a prompt.  It will not
+           interrupt you if you are 'doing' something like
+           reading a message or typing a reply.  Chat
+           'buts-in' like this
+
+           *CHAT*
+           .
+           .   The messages you have received
+           .
+           *ENDCHAT*
+
+           If nothing is waiting, Chat will stay quiet.
+
+           Chat messages
+
+           There are two varieties of Chat messages
+
+           *username*:  is paging you for a chat
+           *username*:  is now only listening
+
+           These are 'system' messages.  The first one
+           appears before a user can send you his first chat
+           message.  It is usually followed by his first
+           message.  The second message appears when a user
+           has been talking to you but has now stopped.
+
+           <username>:  message
+
+           This is a message the user (username) has typed.
+
+           Talking to another user
+
+           To enter into conversation, type from the prompt,
+           CHAT.  A list of users who are online (but who
+           may or may not be listening) appears on your
+           screen.  You may type in the name of one of them
+           or press return, which redisplays an updated
+           version of the list.  Once you have entered a
+           name, the system will try and put you through.
+           If they are not listening or not logged on, you
+           will be told that they are not available, and you
+           will be returned to the prompt where you entered
+           CHAT.  If you are responding to a paging message,
+           you can just type CHAT username, which will put
+           you through, unless the user has disconnected.
+
+           In Chat mode the prompt is
+
+           >
+
+           (* There is no prompt in terse mode)
+
+           at which you may type any message.  Once you
+           press RETURN, the message will be sent to the
+           user you are talking to.
+
+           Every 10 seconds or so, the system will check for
+           incoming messages and print them on your screen.
+
+           This may break up the line you are typing, but do
+           not worry, it is still complete in CIX's memory.
+           If you use a communications program which has a
+           CHAT mode, switch it on.  These modes usually
+           split your terminal screen and make it easier to
+           type messages.  See your programs documentation
+           for more details.  (Procomm and Telix both have
+           chat modes).
+
+           You have a number of commands you may use in chat
+           mode.  They are all preceded by the / character.
+           They can also be abbreviated to one charatcter eg
+           /help or /h.
+
+           /noecho
+           Will disable CIX from echoing back what you type.
+           (note that this mode is AUTOMATICALLY turned back
+           on when you quit chat)
+
+           /echo
+           Will reanable echoing.
+
+           /help
+           Displays a quick list of commands.
+
+           /quit
+           Allows you to leave chat.  When you leave, it
+           sends a message to whoever you were talking to
+           that you are now only listening.  BUT remember
+           that you will continue to recieve chat until you
+           either disconnect or type chat off.
+
+           /also username
+           Also sends any message you type to that username
+           as well as whoever you are already chatting to.
+           eg.  You are chatting to fred, and bill pages you
+           for a chat.  Type /also bill and your messages
+           will go to fred and bill, but note that unless
+           fred also type /also bill and bill types /also
+           fred, fred and bill won't be able to hear each
+           other...
+
+           /xclude username
+           Opposite of /also command, it stops sending
+           messages to that username.
+
+           /list
+           Show's the list of people to whom your messages
+           are going to.
+
+           /who
+           Shows you who is online
+
+           /resume username
+           Shows you username's resume.... eg:/resume fthorn
+
+           /msg username message
+           Sends a private message to username.  This
+           message is ONLY sent to that user.  When it
+           arrives, it is denoted as a private message,
+           because instead of the <name>:  identifier, it
+           appears as >name<:  .
+
+           If you just press return with a blank line,
+           nothing is sent BUT your incoming chat will be
+           checked.
+
+           After you /quit , you will continue listening
+           until you type CHAT OFF.
+
+IMPORTANT :  WHEN IN CHAT MODE AUTO DISCONNECT IS DISABLED!
+             ==============================================
+ ============== checkpoint =============
+Command:   CHECKPOINT -- Writes your current message pointers to disk
+
+Prompts:   Main:  Read:
+
+Format:    CHECKPOINT
+
+See also:  STORE, RESTORE
+
+Usage      Basically, store doesn't store your CURRENT message pointers, it
+           backs up the message pointers that are stored on disk. 
+
+           This is because, to increase speed, when you log in CIX loads your 
+           pointers off disk into memory and as you read message or join and 
+           resign conferences the pointers are changed in memory and NOT 
+           written to disk. Therefore when you use a STORE command CIX backs 
+           up your pointers stored on disk, not the changed ones in memory. 
+
+           This is what the CHECKPOINT command is for, it writes your CURRENT 
+           message pointers (stored in memory) to disk so when you do a STORE 
+           the message pointers you expected were backed up.
+ ============== cixtest =============
+Command:   CIXTEST -- test the communication path between your terminal and
+           CIX
+
+Prompt:    Main:
+
+Format:    CIXTEST
+
+Usage:     CIX presents you with the following menu:
+
+                          M E N U
+                1)  Loopback received characters
+                2)  Redisplay results from 1)
+                3)  Display  one received character  as hex and ASCII
+                4)  Display many received characters as hex
+                5)  Send XON
+                6)  Send XOFF
+                7)  Send received hex value as one character
+                8)  Send all 256 possible characters
+                9)  Quit
+               10)  Send lots of text output (with XON/XOFF flow control)
+               11)  Send received hex values as characters
+            Choice?
+ ============== clear =============
+COMMAND:        CLEAR
+PROMPT:         Mail:
+SYNTAX:         CLEAR INBASKET [FROM number][TO number][QUICK]
+                CLEAR OUTBASKET [FROM number][TO number][QUICK]
+PURPOSE:        Tidy up your in or out mailbaskets.
+
+If you have a lot of mail your mailbox soon becomes rather full. After
+several days CIX automatically deletes old mail from your mailbox,
+but it's a good idea to get rid of your unwanted correspondence
+voluntarily.
+
+Don't forget you can use the FILE command to copy mail messages to
+your scratchpad for subsequent downloading if there's anything you
+need to retain for the future.
+
+The clear command allows you to quickly tidy up your mail baskets.It
+will display all the "Read" messages and ask you whether you want to
+delete them or not.The syntax is;
+
+        CLEAR INBASK            Clear read messages in inbasket
+        CLEAR OUTBASK           Clear read messages in outbasket
+
+By appending the word QUICK to this command, it will automatically
+delete ALL Read messages. ie CLEAR INBASK QUICK.
+
+You can also specify a range of messages to be tidied and worked on
+for example;
+
+        CLEAR INBASKET FROM 621000 TO 623000 QUICK
+
+This would delete all read mail messages in the inbasket from mail
+message 621000 to mail message 623000 and it would NOT confirm each
+deletion
+
+        CLEAR OUTBASKET FROM 623000
+
+This would delete all read mail messages from the outbasket from mail
+message 623000 to the last mail message and would ask for confirmation
+of each deletetion.
+
+
+ ============== colour =============
+OPT ANSI Y Y Q ; turns on colours in CIX.
+You will have to set your terminal to accept ANSI codes.
+
+TO set other colours than default do
+OPT ANSI Y N
+33
+34
+Q
+It won't work if put on a single line, unfortunately.
+
+This will result in ESC[33m being sent before the prompt,
+and ESC[34m being sent after the prompt.
+
+Default settings are ;1;33;40 and ;37, resulting in these codes being sent:
+Before prompt ESC[;1;33;40m Bright Yellow on Black
+After  prompt ESC[;37              White  on Black
+
+The ANSI colour codes are something like this:
+           Foreground       Background
+Black           30             40
+Red             31             41
+Green           32             42
+Yellow          33             43
+Blue            34             44
+Magenta         35             45
+Cyan            36             46
+White           37             47
+To combine several values, separate with  ';'
+5;30;47 Blinking Black on White
+4;33;44 Underlined Yellow on Blue
+
+The ANSI attribute codes are something like this:
+1 High intensity
+4 Underline
+5 Blinking
+7 Reverse
+ ============== commands =============
+Command  Sub-Commands
+-------  ------------------------------------------
+bye
+billing  (online billing)
+edit ... resume, scratchpad, profile, workfile
+file ... <CoSy command>
+help ... <item to get help on>
+join ... <conference name>
+mail ... to, read, status
+moderate add <participant>, add <topic>, new <conf name>, terminate, ...
+noecho
+read ... all, backward, comment, first, forward, header, last,
+	 quit,reference, say, skip, <number> to <number>, resign
+show ... all, new, participant, resume <name>, who <name>, <conf name>
+terse
+time
+verbose
+
+See also 'help hfiles'.
+ ============== comment =============
+comment
+
+   If there is a message that you want to comment on, then, after you
+have read the message, you can type "comment". CIX/CoSy will then put you
+into the 'text gobbler' where you can type your comment (finish entry
+of your comment with a full-stop, after which you will be at the
+Add/Action: prompt where you may add, edit or discard your message).
+
+   The difference between saying and commenting is that when you
+comment, a pointer to your new message is added to the message you
+were commenting on. These pointers are automatically followed when you
+are reading messages by "reference" mode (see 'read ref').
+
+(Note, if you already have text in your scratchpad, then you will be
+put straight into the editor)
+
+
+ ============== comms =============
+There have been recent questions about making your modem go as fast 
+as possible.
+
+You need a number of things to ensure fast downloads.
+
+1: Zmodem (or Ymodem-G but lets not confuse things) as a file
+transfer protocol. If you have an error correcting modem (MNP1-5 or
+V42 - bis) then ensure the data compression is turned on
+
+2: RTS/CTS. Sometimes called hardware handshaking, or flow control,
+whatever it is turn it on. You will often find this under the Terminal
+Options section of your comms package setup. You should also check your
+cable is capable of doing rts/cts. Pins 4 and 5 handle this but and
+will either be crossed 4 to 5 and 5 to 4 or will be straight though.
+How can you tell if yours need to be crossed or straight though, if
+pins 2 and 3 are crossed then so should pins 4 and 5.
+
+3: An Unclogged PC. It easy to clog up a PC, just run a program which
+steals interrupts. If downloading within windows you may have problems,
+watch out for running a mouse driver on the same serial port you use 
+the modem with. I've even heard of people having problems with the Keyb 
+program in Dos 5.
+
+4: The rest. There are various other little things to do with the modem
+many of which are diagnostic and will help you find where things are
+going wrong, or at least cut out the complications. 
+
+a) Ensure you have the modem set to tell you what speed you have
+connected at, as well as if you got error correction and data
+compression.   
+b) Ensure you have the modem set to connect at its fastest speed (up to
+v.32bis - 14,400). 
+c) If you have trouble connecting, tell the modem not to scan for a
+speed, ie connect at the fastest speed possible and don't bother to try
+any others. Usually ATN0   <- thats a zero BTW.
+d) If you are having problems with connecting at fast rates, try
+dialling from the terminal using ATDT<phone number>, instead of using the
+dialling directory.
+ ============== comod =============
+Command:   COMOD -- add another moderator to the current conference.
+
+Prompts:   Mod:  Read:
+
+Format:    COMOD <username>
+
+See also:  EXMOD
+ ============== conditions =============
+The latest set of Terms and Conditions for everyone using CIX Conferencing
+can be found in cix:cixnews/reference:26 or at 
+http://web.conferencing.co.uk/includes/terms-2.4.htm.
+ ============== confstat =============
+
+Command:    GO CONFSTAT or RUN CONFSTAT
+
+Prompt:     Main:
+
+Confstat is a conference statistic program, it provides the following          
+information:
+
+
+*	Creation Date
+*	Moderator Name(s)
+*	Number of Participants
+*	Number of Topics
+*	Number of Messages in Total
+*	Last Message Date
+
+NOTE:  If you are at the Main: or Mail: prompt, then you will be prompted for
+       a conference name to display the statistics on.  If you are the Read:
+       prompt, then the program will assume you want statistics on the 
+       conference you are currently in.
+
+You will then be prompted to either press <CR> for statistics on topics,
+or q will quit at this point.
+
+Topc Statistics include:
+
+*	Topic Name
+*	Number of Messages
+*  	Number of Files
+*	Last Msg Date
+*	Activity  Rating (100 - Very active, 1 - Very quiet)
+*	Number of messages posted in the last 24 hours. (Max. 100)
+* 	Number of messages posted in the last 7 days.  (Max. 100)
+
+The Busyness rating is calculated by getting the date of the last 100 messages,
+for each message that is posted within the last ten days, the rating will
+increase by a factor of 1.
+
+
+ ============== cookie =============
+COOKIE
+	from Main: will display a "word of wisdom" from the closed
+	conference "Epithets"
+ ============== copy =============
+copy <message number> TO  <conference> <topic>
+
+      Message number = the number of the message to be copied, 
+
+      Conference     = The name of the conference where the message is
+                       to be added
+
+      Topic          = The topic name if the conference contains more
+                       than one topic.
+
+ 
+ ============== crash =============
+If your conference list gets corrupted, type RESTORE at the main
+prompt. This will restore your conference list to the way it was at the
+start of the day.
+
+Related command: STORE.
+
+ ============== create =============
+ To create a new conference, use
+    MODerate New <conference name>
+
+ To create (send) a letter, use
+    MAil Send
+ ============== date =============
+
+COMMAND:        DATE
+PROMPT:         Read:
+SYNTAX:         READ DATE <date> [ to DATE <date> ]
+PURPOSE:        Find and read messages by date.
+
+DATE is an option of READ, used for accessing conference entries by
+date of entry, or since a certain date. The date must be entered
+without intervening spaces between the day, month, and year,
+and with the month in alphabetic form.
+The month may be abbreviated if the abbreviation is not ambiguous.
+
+Valid date formats:
+   23jun94  = 23 June 1994
+   27f1999  = 27 Feb. 1999
+
+Incorrect formats:
+   20/11/92  -- date contains slashes
+   12ju94    -- is month 'June' or 'July' ?
+   91Dec2    -- order should be day, month, year
+   Feb 5, 97 -- mustn't contain spaces
+
+Example: READ DATE 23JUN99 TO DATE 25AUG99
+
+/* DATE help file updated 16Feb1999 */
+
+
+ ============== dejavu =============
+If you read by reference, and quit from the topic without reading
+all new messages, then you are likely to reread some of the messages
+from that topic.
+ ============== delete =============
+At the Mail: prompt
+   DELETE will delete your last read message.
+   The "delete ####" command will delete all entries for message "####"
+   from your 'Out-Basket'.  The message remains in the system, however,
+   until read and deleted by the recipient(s).
+
+To delete a private file type ERA <filename>
+To delete a topic file as a moderator type ERA <filename> from read prompt.
+
+ ============== download =============
+download
+--------  
+Main/Read Subsystem:
+    In the 'main' or 'read' subsystem, "download" is used to transfer a file
+    from your COSY scratchpad to your micro (for local processing or whatever).
+    The COSY scratchpad can be filled using the FILE command.
+
+    If you have an archived scratchpad (see the ARCSCRATCH command), download
+    will ask you if you want to download that copy. Answer no and you can
+    download the ASCII version.
+
+
+download <protocol>
+-------------------
+Option Subsystem:
+    In the 'option' subsystem, you can define the transfer protocol to use
+    when downloading files.   Currently available are:
+
+         download kermit
+         download xmodem
+         download crc-xmodem
+         download ymodem
+         download zmodem (default)
+
+   Note : Ymodem is actually Ymodem batch, so when you use this, always
+   select Ymodem BATCH as your terminal protocol, otherwise, it will 
+   'hold on' for 5 minutes after the download
+
+Similar commands:
+Read: FDL <filename>  ;download file from topic
+Mail: FDL <filename>  ;download private file
+OPT UNIX Y Q          ;select LF line termination in downloaded file
+More on downloading see FILES
+
+ ============== echo =============
+echo <text>
+ 
+The "echo" command is available at the main level of COSY, but its main
+use is within "profile" files.  It causes everything on the rest of the
+line to be "echoed" to your terminal.  Thus, in your profile it can be
+used to put headers in front of status displays, or to display a
+constant 'reminder message' whenever you log on.
+ ============== edit =============
+Command:   EDIT -- edit a file.
+
+Prompts:   Main:  Read:  Mail:
+
+Format:    EDIT [SCRATCHPAD]
+              edit your scratchpad.  This is the default filename.
+
+           EDIT PROFILE
+              edit your profile.  Your profile contains commands which are
+              automatically issued when you logon to CIX.
+
+           EDIT RESUME
+              edit your resume.  Your resume contains anything you wish to say
+              about yourself.  Other users may see your resume by issuing
+              "SHOW RESUME <nickname>".
+
+           EDIT WORKFILE
+              (at the Read: prompt) edit the conference workfile.  The
+              workfile may be jointly changed by any conference member.
+              Uses might include a working paper.
+
+           EDIT HELP
+              obtain a summary of the above commands.
+
+Note:      For a description of the commands you may use in the editor, enter
+           HELP VED, HELP FSE or HELP QED (for the verbose, fullscreen and
+           quiet editors respectively).
+ ============== edit.cmds =============
+The "edit" command has the following options:
+
+SCRAtchpad.... edit your scratchpad (assumed if no option given to "edit").
+PROfile....... edit your log-on profile.
+Resume........ edit your resume file.
+Workfile...... edit the workfile for the conference you are in.
+SEt........... set default editor (CIX prompts for verbose or quiet).
+
+For a description of the commands you may use in the editor, enter HELP VED,
+HELP FSE or HELP QED (for the verbose, fullscreen and quiet editors
+respectively).
+ ============== editor =============
+There are several editors:
+Textgobbler default ; a linewrapping (garbling) editor, without possibility
+                     to go back to previous lines.
+Textgobbler A      ; a non wordwrapping (non garbling) editor,
+                    .r redisplays last line
+                    .d deletes last line
+Terse editor       ; a line editor
+Verbose editor     ; a line editor
+B editor           ; a full screen editor with WordStar commands
+C editor           ; a full screen editor based on Micro Emacs
+
+HELP EDITORB will provide the commands for editor B
+HELP EDITORC will provice the commands for editor C
+ ============== editorb =============
+To select the fullscreen editor, enter:
+
+   OPTION EDIT A QUIT  for text gobbler A and the fullscreen editor.
+   OPTION EDIT B QUIT  for the fullscreen editor only.
+
+Enter HELP GOBBLER for information on the "A" text gobbler.  If you SAY a
+message with "EDIT B" in effect, you should (for the convenience of other
+users) enter TITLE: at the beginning of the top line.
+
+You may define your terminal type to CIX by entering
+OPTION TERMINAL TYPE <type> QUIT, where <type> is ANSI, VT52, VT100 or TVI920.
+The default is VT100.
+
+The commands for the fullscreen editor are as follows.  For instance, when
+you've finished entering your text, hold down the Control key and press K
+followed by D.  As well as the cursor left, right, up and down commands shown,
+you may use the cursor arrow keys (which you can't in the text gobblers).
+Note that ^H (to delete a character) is the code sent by the Backspace key.
+(Your OPTION TERMINAL ERASE setting is ignored by the fullscreen editor.)
+
+^S  - Cursor left  *                   ^V -  Toggle overtype/insert mode  *
+^D  - Cursor right  *                  ^G -  Delete char at cursor position  *
+^E  - Cursor up  *                     ^H -  Delete char to left of cursor  *
+^X  - Cursor down  *                   ^T -  Delete word to right of cursor
+^A  - Cursor word left  *              ^Y -  Delete line  *
+^F  - Cursor word right  *
+^QS - Cursor to beginning of line  *   ^QF - Find text in file
+^QD - Cursor to end of line  *         ^L  - Find next occurrence
+^R  - Page up a screen  *              ^QA - Find and replace text
+^C  - Page down a screen  *
+^W  - Scroll screen up one line        ^KB - Mark beginning of a block
+^Z  - Scroll screen down one line      ^KK - Mark end of block
+^QR - Top of file                      ^KC - Copy block to current position
+^QC - Bottom of file                   ^KV - Move block to current position
+                                       
+^KQ - Abort  *                         ^U -  Toggle help off/on  *
+^KD - Save the file and exit  *        ^O -  Redefine commands *
+
+You may redefine those commands which are marked with an asterisk (*).  You
+cannot save any changes you make to the commands; the default commands will be
+in effect the next time you use the editor.  To redefine a command, ensure the
+help section is toggled on (^U), then:
+
+   ^O to enter redefinition mode
+      move cursor to command
+      <CR> to start redefining command
+      hit key(s) for new definition
+      <CR> to end new definition
+      repeat for other commands
+   ^O to end
+
+The screen size is set to 24 x 80 irrespective of the terminal pagelength and
+width settings.  If your terminal type is VT100 (the default), the editor
+defines a scrolling region; if your terminal has more than 24 lines, you will
+need to clear the scrolling region when you come out of the editor.  If you're
+using a VT100 emulator with a menu line on line 24, you should disable this.
+
+We recommend you use an error-correcting modem (V.42bis or MNP) and hardware
+handshaking with the fullscreen editor, as the editor disables XON/XOFF flow
+control to allow ^Q and ^S to be used for commands; also, line noise can
+produce some very bad results.
+ ============== editorc =============
+CTRL-g        ; Escape current command
+CTRL-n        ; down 1 line (next)
+CTRL-p        ; up 1 line (previous)
+CTRL-f        ; Forward 1 character
+CTRL-b        ; Backwards 1 character
+CTRL-e        ; Jump to end of line
+CTRL-a        ; Jump to beginning of line
+CTRL-d        ; delete character to right
+BKSP          ; delete character to left
+CTRL-k        ; remove to end of line if done on a blank line then the line
+                removed, thus if done twice on the same line the line will be
+                removed.
+CTRL-y        ; Put back whats been removed
+CTRL-s        ; Search forward for text use Esc to terminal input of
+                text to search for.
+CTRL-r        ; Search backwords for text
+Esc->         ; Jump to end of text
+Esc-<         ; Jump to beginning of text
+Esc-v         ; Jump up 1 page
+CTRL-x-CTRL-c ; quit, if changes have been made you are prompted
+Esc-q         ; Reformat the current paragraph <- useful
+Esc-z         ; exit and save current text
+Esc-BKSP      ; Delete word to left
+ ============== era =============
+Command:   ERA -- erase a file from a topic.
+
+Prompt:    Read:
+
+Format:    ERA <filename>
+
+See also:  REN, ERASE
+
+Usage:     ERA allows the moderator to erase a file in a topic.  You may use
+           "*" wildcards in the filename; if you do, for each file that
+           matches the pattern, CIX gives you a Y/N prompt.
+
+Note:      You may not use the ERASE command for this purpose; ERASE deletes
+           files from your private directory.
+ ============== erase =============
+Command:   ERASE -- erase a file from your private directory.
+
+Prompt:    Mail:
+
+Format:    ERASE <filename>
+
+See also:  BINMAIL, RENAME, EXPORT
+
+Usage:     You may use "*" wildcards in the filename; if you do, for each file
+           that matches the pattern, CIX gives you a Y/N prompt.
+
+Note:      Moderators may use the ERA command at the Read: prompt to delete a
+           file from a topic.
+ ============== exmod =============
+Command:   EXMOD -- remove another moderator from the current conference.
+
+Prompts:   Mod:  Read:
+
+Format:    EXMOD <username>
+
+See also:  COMOD
+ ============== export =============
+Command:   EXPORT -- export a binmail file to a conference.
+
+Prompt:    Mail:
+
+Format:    EXPORT <filename>
+
+See also:  BINMAIL, FUL
+
+Usage:     EXPORT copies a file from your private mail directory to a
+           conference topic.  You must have entered the MAIL command from the
+           Read: prompt, so CIX knows to which topic you wish to EXPORT the
+           file.  You could enter SHOW CURRENT to remind yourself of the
+           topic to which you're currently joined.  When you have EXPORTed a
+           file, you may delete it from your directory by using the ERASE
+           command.
+
+           Please remember to mail the conference moderator, so s/he may add
+           the file to the flist.
+ ============== externalmail =============
+As a CIX user you have access to INTERNET MAIL, this means you can mail
+people on different computers all around the world. 
+
+To mail someone on a different site type MAIL TO user@site. To get
+someone to mail you on CIX, tell them your mail address is you CIX
+nickname @cix.compulink.co.uk, so if you nickname was johnperry, your
+Internet mail address would be johnperry@cix.compulink.co.uk which you
+can print on your business cards for a bit of extra kudos.
+
+Finding the address you want to mail to
+---------------------------------------
+Unfortunately there is not at present an easy way to get a list of users
+who can be contacted for a couple of reasons. Firstly there are
+millions of people, and secondly they are changing all the time..
+
+If you know that someone has an email address and you know which site
+they are on then sending a mail message to postmaster@site asking what
+the email address for the person you are trying to get hold of, will
+come up with the answer you want.
+
+If you are not sure, or don't know the site then there is a way to find
+this out as well. From one of the CIX prompts type: GO INTERNET and you
+should find yourself at the ip> prompt from here you can use the WHOIS
+program to get information of Internet sites. Type:
+
+whois Smith             - looks for name or handle SMITH.
+whois \!SRI-NIC         - looks for handle SRI-NIC only.
+whois '.Smith, John'    - looks for name ``John Smith'' only.
+whois '*BT*'            - looks for anything with BT in is....
+
+You can then send a mail message off to postmaster@site asking what a
+persons username is.
+
+The easiest way is to phone up the person you want to mail and ask them
+what there mail address is :-) This is of course not always practical.
+
+Some example addresses
+----------------------
+Here is a list of networks which you may find useful as examples, please
+note, these are not guarenteed to work and may change without us
+knowing. If anyone knows one is wrong, or doesn't work, please let me
+(mat@cix.compulink.co.uk) know and I'll try to get the correct address.
+
+Network		Mail to
+CompuServe	1234.12345@compuserve.com   (note, replace the , in the
+                                             normal CI$ address for a .)
+MCI Mail	user@mcimail.com
+             or 123-1234@mcimail.com        (note, mcimail Id's may not
+                                             be quoted with the -)
+Fidonet         faaaa.nbbbb.zcc.fidonet.org (where aaaa = node number
+                                                   bbbb = network number
+                                                   cc   = zone number)
+Genie           user@genie.geis.com         (We believe Genie users may have
+                                             to pay extra to receive mail)
+Telecom Gold    GI.SU@uk.ac.goldgate        (GI = Given name, SU = Surname)
+IBM Mail        IEA@ibmmail.com		    IEA is the Inter Enterprise Address 					    used as an address within Mail 
+					    Exchange
+EARN/BITNET	user@site.bitnet            You must replace user and site.
+
+Thats it so far, if you think a mail address may be useful, please let
+me know.. mat@cix.compulink.co.uk..
+
+Sending binary files via External mail
+--------------------------------------
+You cannot send binary files using External Mail, what people do to get
+ around this is to take your binary file and convert it to ASCII, send
+the  mail message and the person at the other end will have to convert
+it back to a binary file. The program you need to turn a binary into a
+ASCII file  is called UUENCODE and the one to turn it back to being a
+binary again is UUDECODE. 
+
+You will find the UUencode/UUdecode package for the PC in the filepool
+conference.  For other machines you should look in the platforms file
+list.  The file is UUEXE521.ZIP, use it as follows:  
+
+1: uuencode <binaryfile>
+2: Log into CIX
+3: From the Main: prompt Type: UPLOAD < and upload the ASCII file you 
+   created with UUENCODE
+4: Once you get back to the Main: prompt Type: MAIL TO <user>@<site>
+5: CIX will ask you for a subject, enter the subject of your mail message.
+6: CIX will tell you that you already have n lines in your scratchpad.
+7: You should now exit from the editor and hit <CR> at CIX's send/action:
+   prompt to send the mail message.
+8: When the person you sent the mail to receives the mail they should
+   take the file, remove the header and run the uudecode program over it.
+ ============== fal =============
+Command:   FAL -- list the files in an .ARC or .ZIP file.
+
+Prompts:   Read:  Mail:
+
+Format:    FAL <filename>
+
+Example:   fal cixman.arc
+
+See also:  FLIST, FDIR, PRIVATE
+
+Usage:     FAL shows which file or files are contained in an .ARC or .ZIP
+           file, either in a conference topic or in your private mail
+           directory.  At the Read: prompt only, you may use "*" and "?"
+           wildcards.  "*" matches one or more characters; "?" matches a
+           single character.  For instance, "cix??n.*" might match
+           "cixman.arc".  If you use wildcards, FAL lists the directory of the
+           first file only which matches the search pattern.
+ ============== fax =============
+
+The CIX Faxgateway
+------------------
+
+To send a fax via the CIX FaxGateway type:
+
+MAIL TO FAXMACHINE
+
+To send a fax, the first part of your mail message should contain 'Fax control 
+codes'.  Here is an example of how to send a fax to 020 8255 5101 for my
+attention.                     
+
+% Faxctrl: Faxno=020 8255 5101
+% Faxctrl: To=Paul
+% Faxctrl: From=Whoever
+% Faxctrl: End
+This is where you can start putting your Fax text.
+
+The above example will send a fax to 020 8255 5101 with a cover page for the
+attention of Paul.  The cover page will also state that it is from 'Whoever'.
+
+If you do not want a cover sheet or want to create your own within the body
+of your message, then simply add this control:
+
+% Faxctrl: Cover=N
+
+NB: If you do this, then you should not use the To & From Fax controls.       
+
+Pricing
+-------
+
+We have tried to keep the CIX fax price as simple and as inexpensive 
+as possible. 
+
+Please note: If your fax is not sent you are not billed, so if you get
+the telephone number wrong, or the number is engaged, or even if you mess
+up the commands you should not be billed.
+
+
+These are the prices for faxes sent to a UK telephone number.
+
+Normal Fax:   30 pence per page
+Extras:       20 pence per extra per page
+
+Each page consists of 64 lines of text.  If you send a fax without a 
+% Faxctrl: Cover=N, then the first page will take 54 lines of text.
+
+The prices for faxes sent outside the UK are even simpler. 
+
+The prices are as follows:
+
++--------------------+--------------------+------------------+
+| Destination:       | First page:        | Additional pages |
++--------------------+--------------------|------------------+
+| Europe:            | 70 pence           | 45 pence         |
+| Rest of the World  | 1 pound 75 pence   | 1 pound 25 pence |
++--------------------+--------------------+------------------+
+
+
+Having problems
+---------------
+
+When you have sent a fax, you will receive a mail message from the fax
+machine telling you if it was sent okay, how long it took, how much you 
+have been charged, the country that the fax was delivered to, the number
+of pages, receiving ID, the actual time that the fax was sent and the
+speed at which the fax was sent.
+
+If the fax did not go well (ie. the number was engaged) then you will be
+told this in the mail message.  Remember, you will not be billed for a 
+failed transmission.
+
+If you continue to have problems, put a message in the cix.support
+conference about it, or send an email to support@cix.co.uk.
+
+Differences from the previous gateway
+-------------------------------------
+
+The current gateway has no concept of different resolutions, and thus many
+of the old controls are not supported in this version.
+
+However, should your fax message contain one of the unsupported codes, then
+the gateway will ignore them, and your fax should still be delivered ok.
+
+This version has a enormously increased error detection, and instead of      
+mailing you with an error code, it should mail you with an actual reason
+why your fax could not be transmitted.
+ ============== fdir =============
+Command:   FDIR -- display a list of the files in a topic.
+
+Prompts:   Mod:  Read:
+
+Format:    FDIR [<topicname>]
+
+See also:  FLIST, FFIND, ORPHANS, DIR
+
+Usage:     FDIR gives you a `raw' list of the files in a topic, without the
+           descriptions of the files that FLIST gives you.  FDIR is mainly
+           used by the conference moderator when modifying the flist (file
+           list), but anyone may use the command.
+
+           If and only if you entered the MODERATE command at the Main:
+           prompt, you may specify the topic name.
+
+Notes:     1. A file shown by FDIR is not necessarily available for
+              downloading; the moderator must have added a file to the flist
+              before it may be downloaded.  However, the moderator may
+              download a file without first adding it to the flist.
+
+           2. Use the DIR command to see a list of the files in your private
+              (binmail) directory.
+ ============== fdl =============
+Type HELP FILES
+
+ ============== fexport =============
+Command:   FEXPORT -- export a file to the filepool.
+
+Prompt:    Read:
+
+Format:    FEXPORT <filename>
+
+See also:  FILEPOOL, FFIND, EXPORT
+
+Usage:     FEXPORT may be used only by the conference moderator.  
+
+           The file is copied (not moved) to the filepool, so you should
+           delete the original file, using the ERA command.  You may include
+           in your flist a file that is in the filepool by using a "f|" tag.
+
+           When you FEXPORT a file, you should mail a moderator of the
+           filepool conference (enter SHOW FILEPOOL to see who these are), so
+           he may include the description of the file in the flist of
+           filepool/biglist.  The flist of filepool/thelot is automatically
+           updated after a delay of up to 24 hours, but this doesn't contain a
+           description.
+ ============== ffind =============
+Command:   FFIND -- search CIX for a file.
+
+Prompts:   Main: Read:
+
+Format:    FFIND <substring>
+
+See also:  FLIST, FDL, FILEPOOL
+
+Usage:     FFIND searches CIX for files whose names contain <substring>
+           (leading and trailing "*" wildcards are assumed).  If you happen to
+           know the complete name of the file you're looking for, you may
+           specify that.  FFIND then displays the names of the files, their
+           sizes, and where they are.
+
+           FFIND searches open and closed conferences, but not confidential
+           conferences.  It also searches the filepool.  (A moderator may put
+           a file in the filepool by using the FEXPORT command.)  If a file is
+           in the filepool, you may download it from filepool/thelot (note
+           that the filepool conference is distinct from the filepool itself).
+           You may also download it from one of the 36 topics in the filepool
+           conference which contain subsets of the complete flist.  For
+           instance, if the file's name starts with "a", you may download it
+           from the "files_a" topic -- this saves time, as CIX has a shorter
+           list to scan before starting the download.
+
+Notes:     1. FFIND uses a table which is automatically built each night from
+              the directories of conferences and the filepool.  Therefore,
+              there is a delay of up to 24 hours between a file being uploaded
+              to CIX and it being shown by FFIND.
+
+           2. A file shown by FFIND which is in a conference is not
+              necessarily available for downloading; the conference moderator
+              must include a file in the flist before you can download it.
+              The flists in filepool/thelot, filepool/a_files, etc., are
+              automatically updated each 24 hours, though.
+
+           3. To see a description of what a file is, join the conference and
+              enter "flist <filename>".  If the file is in the filepool, there
+              may be a description in filepool/biglist, provided the moderator
+              has manually updated the flist.
+
+           4. A file in the filepool may be available for downloading from a
+              conference other than filepool, if the moderator has updated the
+              flist accordingly.  (The only thing special about the filepool
+              conference is that the flists in some of the topics are updated
+              automatically).  These entries are not shown by FFIND; use the
+              FLIST command to see entries in a flist.
+ ============== file =============
+Command:   FILE - Redirects the output of any command to your scratchpad.
+
+Usage:     The prefix command 'file' re-directs the ouput of any command
+           to your scratchpad,  where it can be retrieved
+           the next time you enter the editor, or it may be downloaded.
+
+Example:   From Main: prompt type   file show participants
+                Main: prompt type   file read all
+
+see also:  SHOW, SCRATCHPAD, DOWNLOAD
+ ============== filepool =============
+The FILEPOOL is a repository for all files on cix which may have relevance 
+to more than one conference. Any conference moderator can include any of 
+the filepool files on the flist of any topic without having to have a copy 
+of the file in the local directory.
+
+The filepool conference is a convenient place to find all files that reside 
+in the FILEPOOL.
+
+Files for submission to the filepool should be uploaded to the topic 
+2newfiles and not fexported to the filepool by users. This will permit all 
+uploads to be properly scanned for viruses prior to being released into the 
+conference areas.
+
+The filepool conference is divided into five main topics:
+
+    1)    thelot    All files which are currently found by ffind
+    ============    as being in the FILEPOOL are downloadable by
+                    anyone here. No comments or descriptions are
+                    provided.
+
+    2)    biglist   All files which have a description known to
+    =============   CIX are included on the flist here. If a
+                    moderator fexports a file to the FILEPOOL he
+                    should mail the filepool moderators with a  
+                    description for it to appear here.
+
+    3)     ?_files  There is one topic here for each letter of
+    ==============  the alphabet, and one for each digit. These
+                    topics are a subset of biglist containing
+                    only the file starting with the same letter
+                    as the topic name. (i.e. files starting with
+                    the letter 'g' are in 'g_files') If you know
+                    the initial letter of the file you want to
+                    download, it will be quicker to download the
+                    file from these topics that from biglist.
+
+    4)   2newfiles  Files should be uploaded here is they are to
+    ==============  appear only in the FILEPOOL. Descriptions
+                    will be added and the flist will contain all
+                    files uploaded in the last month, as well as
+                    any uploaded since the last update of the
+                    biglist.
+
+    5)    chatter   This topic is the only one where discussion
+    =============   of files in the filepool may take place. Any
+                    messages posted to any of the other topics
+                    not directly related to that topic will be 
+                    moved here at the earliest opportunity.
+
+    6)      about   This topic is reserved for discussion about
+    =============   files that are, or perhaps should be in the 
+                    filepool. Messages posted here should be to
+                    the point and not general discussion. Any
+                    idle chatter in this topic will be moved to
+                    the chatter topic!
+ ============== files =============
+Files
+-----
+Files are held within conference topics. To get a list of
+files available in a conference topic, type FLIST.
+
+To download a file, type FDL filename
+                         ------------
+
+To upload a file, type FUL filename
+                       ------------
+
+Note:
+(1) The file transfer protocol used is the same as selected for up/down-
+loading your scratchpad
+(2) When you have uploaded a file, it must be added to the File List by
+the conference moderator, so mail him to inform him that you have uploaded
+a file. 
+
+Selecting your up and download protocol
+---------------------------------------
+From any prompt, type 
+
+OPT DOWN (and press return)
+Available protocols are displayed. Select one of them and press return.
+then type
+QUIT
+
+and you will be back where you were.
+
+For upload protocol selection, the same instructions apply, but use
+OPT UP.
+
+If you want to add this to your profile, add a line
+
+OPT DOWN x Q
+Where x is the SINGLE character you would enter to select your required
+protocol.
+
+Examples:
+OPT UP Y Q ; select Ymodem uploads
+
+Related commands:
+FFIND <substring>  ; will search for downloadable file *substring*
+
+ ============== filestats =============
+Command:    FILESTATS - Shows you the download statistics of files in the
+            current topic of a conference.
+
+Usage:      When in a topic of a conference with files, typing RUN FILESTATS
+            will display each file's statistics, currently, the last time
+            the file was downloaded, and the number of times it has been
+            downloaded.  When run, it will inform you of what period the
+            statistics started, and the last time they were updated.
+
+Exampe:     join windows/files
+	    run filestats  
+
+            Will display the number of times and when each file was last
+	    downloaded.
+
+
+ ============== find =============
+Command:   FIND -- display messages containing a word.
+
+Prompt:    Read:
+
+Format:    FIND <pattern> [[FROM] <msgno>] [TO <msgno>]
+
+Example:   find widget 120 to 260
+
+See also:  SEARCH, SQUICK.
+
+Usage:     FIND looks in the current topic for the specified pattern and
+           displays the messages which contain the pattern.  The pattern could
+           be a word or a part of a word: it may not contain spaces.  You may
+           use a question mark as a wildcard character, to match any single
+           character.  For instance, "??dget" would match "widget" or
+           "gadget".  You could also use a question mark to match a space if
+           you wanted to locate two words.  For instance, "ibm?pc" would match
+           "IBM PC", provided the words were not split across two lines.
+
+           If you specify only the pattern, FIND scans all messages in the
+           topic.  You may limit the search by specifying FROM <msgno> and/or
+           TO <msgno>.  You may omit the FROM keyword.  TO <msgno> specifies
+           the last message to be scanned (the range is inclusive).
+
+Notes:     1. FIND is case-insensitive: upper-case and lower-case letters
+              are treated equally.
+
+           2. The maximum length of the pattern is 14 characters.
+
+           3. FIND scans nicknames in message headers as well as the text of
+              messages.
+
+           4. Messages which are displayed by FIND are marked as read in the
+              normal way.
+ ============== first =============
+read first
+read first [ to <message-identifier> ]
+
+    "first" is one of several ways of identifying which message you wish
+"read" to show you.  It is equivalent to "1".
+ ============== flist =============
+Command:   FLIST -- display a list of the files in a topic, with brief
+           descriptions.
+
+Prompt:    Read:
+
+Format:    FLIST [<filename>]
+
+See also:  FFIND, FILES, FDL, FUL
+
+Usage:     FLIST displays all, or a part of, the file list maintained by the
+           conference moderator.  To see a partial list, specify a filename or
+           a filename pattern.  In a filename pattern, you may use "?" to
+           represent any single character, or "*" to represent one or more
+           characters.  For instance, you could enter "FLIST *.ZIP" to get a
+           list of all the .ZIP files in the topic.
+
+Note:      You may find it convenient to file the flist in your scratchpad,
+           which you may then download and read offline.  Do this by entering
+           "FILE FLIST".
+
+Command:   FLIST -- edit the file list.
+
+Prompt:    Mod:
+
+Format:    FLIST [<topicname>]
+
+See also:  SCGET, SCPUT
+
+Usage:     At the Mod: prompt, FLIST allows you to maintain the flist.  If you
+           entered the MOD command from the Read: prompt, you must not enter
+           the topic name.
+
+           Entries in the flist have the following formats:
+
+           c|<filename>|description
+           f|<filename>|description
+              A file in the current topic and in the filepool, respectively.
+
+           ||any text
+           .|| any text
+              Notes visible to participants.  With the second format, the text
+              is aligned with the descriptions.
+
+           #||any text
+              A note which is visible only to the conference moderator.
+ ============== flowcontrol =============
+Recommended flowcontrol setting of your modem is:
+RTS/CTS handshake.
+No XON/XOFF handshake in either direction.
+Let XON/XOFF characters pass through modem, dont absorb them.
+
+Recommended flowcontrol setting for your comms package:
+RTS/CTS handshake
+XON/XOFF when in textmode
+(XON/XOFF should automatically be disabled as needed when
+doing a file transfer).
+
+ ============== forward =============
+read forward [ <number> [ to <number> ]
+
+   The "forward" option causes "read" to resume reading conferences in the 
+forward direction.  See "help backward".
+ ============== ful =============
+Type HELP FILES
+
+ ============== go =============
+GO
+
+allows access to several other areas of cix such as newsnet and
+internet.
+
+eg
+
+Main:GO NEWSNET
+Main:GO INTERNET
+ ============== gobbler =============
+A `text gobbler' reads the text you key in when you (for instance) comment to
+a message or send mail to someone.  CIX uses a text gobbler only when your
+scratchpad is initially empty; otherwise it uses a text editor.  If you quit
+from entering an earlier comment, for instance, your scratchpad still contains
+the comment.  You may clear your scratchpad by issuing the KILLSCRATCH
+command.
+
+CIX has two text gobblers.  In the gobblers, you may use the Backspace key to
+delete characters (or the Delete key if OPTION TERMINAL ERASE DELETE is in
+effect).  You may not use the cursor arrow keys (though you may use them in
+the fullscreen editor).
+
+The default text gobbler does wordwrap.  That is, as you approach the end of a
+line, it deletes the word you're keying and copies it to the start of a new
+line; you don't have to press the Carriage Return key.  The wordwrapping
+occurs at 10 characters less than your terminal width setting; that is, at the
+69th character on a line if you have the default terminal width setting.  If
+you upload text you've prepared offline, you'll probably want to disable
+wordwrapping by setting your terminal width to a large value.  For instance,
+enter OPTION TERMINAL WIDTH 999 QUIT.
+
+End your input to the default text gobbler by typing "." or ".s" at the
+beginning of a line with no characters following (not even a space).
+
+If you change to a different editor, you may revert to the default text
+gobbler by entering OPTION EDIT VERBOSE QUIT (or simply OP E V Q).
+
+You get another text gobbler when you use OPTION EDIT A QUIT; this doesn't do
+wordwrapping.  If you type past the position defined by your terminal width
+setting (79 by default), CIX automatically adds a hyphen and starts a new
+line.  You don't see this immediately, but CIX warns you when you next press
+Carriage Return.
+
+End your input to the `A' gobbler by typing "." or ".s" at the beginning of a
+line, as with the `verbose' gobbler.  Additionally, you may enter the
+following commands:
+
+   .r  to redisplay the last line
+   .d  to delete the last line
+   .q  to quit without saving your input
+
+These commands have no effect on the TITLE: line.  Even if you use the ".q"
+command, the TITLE: line will remain in your scratchpad.
+
+Enter HELP VED or HELP FSE for help on the editors (verbose or fullscreen).
+ ============== handshake =============
+Recommended flowcontrol setting of your modem is:
+RTS/CTS handshake.
+No XON/XOFF handshake in either direction.
+Let XON/XOFF characters pass through modem, dont absorb them.
+
+Recommended flowcontrol setting for your comms package:
+RTS/CTS handshake
+XON/XOFF when in textmode
+(XON/XOFF should automatically be disabled as needed when
+doing a file transfer).
+
+ ============== header =============
+read header <number> [to <number>
+
+   The "header" option is one way of quickly scanning through a range of
+messages.  Only:
+                message number
+                originator
+                number of characters in that message
+                date of creation
+                -----------------
+                the first line of text
+is displayed.
+
+    No action is taken if you do not say what to read the header of.
+ ============== help =============
+help
+
+The "help" command        can be used in three ways:
+      help                - if no arguments are given, a list of commands
+                            that can be used at this level are given
+      <command> ?         - lists valid arguments to <command>
+      help <command>      - gives general help on that command
+      help hfiles         - lists <commands> for which help is available
+      ?                   - lists available commands
+
+--------------------------------------------------------------------------
+Note on the syntax declarations:
+
+    The form or syntax of commands and options are often displayed with
+the following symbols:
+
+[ optional parmeters ].............modify the behaviour of the command
+<text not to be taken literally> ..something appropriate must be substituted
+
+ ============== hfiles =============
+abbreviations  crash          handshake      order          show
+abort          create         header         orphans        show.cmds
+about.netfind  date           help           participants   skip
+absence        dejavu         hfiles         password       squick
+add            delete         internet       print          status
+addpart        download       join           profile        stay
+addprompt      echo           kermit         protocol       store
+all            edit           killarc        prune          substitute
+allaboutme     edit.cmds      killscratch    qed            switchtopic
+ambiguous      editor         last           quiet          synonym
+ameol          editorb        level          quit           terminal
+ansi           editorc        login          rates          terminate
+arcscratch     era            logout         rdonly         terse
+author         erase          macro          read           time
+autorecent     exmod          mail           read.add.cmds  tnext
+backward       export         mail.cmds      read.cmds      to
+billing        externalmail   mailfwd.cmds   reference      topic
+binmail        fal            mailread.cmds  remove         topicsize
+break          fax            mailsend.cmds  ren            tprev
+buddy          fdir           main.cmds      reply          type
+bye            fdl            markunread     resign         unix
+cancel         fexport        mnp            restore        upload
+chat           ffind          moderate       resume         ved
+checkpoint     file           moderate.cmds  root           vedhelp
+cixtest        filepool       new            run            verbose
+clear          files          newsnet        say            vote
+colour         filestats      next           scgadd         vt100
+commands       find           nickname       scget          who
+comment        first          note           scpadd         wildcards
+comms          flist          olr            scput          withdraw
+comod          flowcontrol    online         scratchpad     wordwrap
+conditions     forward        opt            scratchsize    xmodem
+confstat       ful            option         script         ymodem
+cookie         go             option.cmds    search         zmodem
+copy           gobbler        options        send
+ ============== internet =============
+Command:	GO INTERNET -- Enter the Internet subsystem.
+
+Prompts:	Main: Read: 
+
+Description:
+
+The Internet is a network of computers that stretches around the world. These
+connections can be anything from a serial cable to a fibre optic link. Data 
+is transmitted down these channels but because of the additional bandwidth 
+available, the connected sites allow users to access the connections. 
+Basically, they allow us access to this network with the ability to log onto 
+any computer that allows you. This opens doors to online databases, file 
+servers, online games, chat servers and so on. There are thousands of public 
+access, and part public access systems out there..
+
+Once you get into the CIX Internet program you should get an ip> prompt. 
+The help options are displayed when you enter the CIX Internet subsystem.
+ 
+You use the telnet program to connect yourself to one of the thousands 
+of online services also connected to the Internet, this could be a multi 
+user game, a NASA database, a Chat server with hundreds of people on it, 
+or the computer in your American office!
+
+You use the FTP program to connect to a file server, with this you can
+pull files off, or put file onto other computers, if you have permission
+of course. On one of the many public access file servers there will be a
+public directory which will have the permissions set to allow you to pull
+files off it.
+
+Addressing is similar to the current external mail addressing, except
+you telnet or ftp to a site, instead of specifying a username. Sometimes
+you will be expected to quote a port number at that site to connect to,
+this will run the program associated with that port number, this
+normally happens with multi user games. I will put a list of internet
+addresses in this topic for download.
+
+Here are a couple of questions you may have, along with the answers.
+
+How much extra does it cost you?    Nothing..
+What information is out there?      A very very large amount.
+How do you get into it?             Type GO INTERNET from Main: or Read:
+How do I find out whats there?      Type ADDRESS <text> where <text> is
+                                    something that may interest you.
+
+If you are having problems with the concept of the Internet (quite common 
+I assure you) or want more reading material, look in the file list of the
+cix/internet conference/topic where you should find some files, zen_txt.zip
+(Zen and the Art of the Internet) being one of the best tutorials.
+ ============== join =============
+
+COMMAND:        JOIN
+PROMPT:         Main: Read: Mail:
+SYNTAX:         JOIN <conferencename>
+PURPOSE:        Enter a conference, or join a new one.
+
+If you wish to read the contents of a specific conference, just type
+join  <conference name>, and you will be joined to your specified
+conference. If you have not previously joined this conference or you
+have previously resigned from it then you will be asked if you would
+like to register.
+
+It isn't necessary to type join to join a conference, just pressing
+<cr> will automatically join you to the next conference in your
+conference list. Use it to join new conferences. New conferences you
+join will be added to the end of your conference list.  See the
+ORDER command to change the order you wish to view conferences in.
+Also see RECENT and AUTORECENT to choose how many messages in a
+conference will be marked as unread when you join.
+
+See also: SHOW ALL, ORDER, RECENT, AUTORECENT, RESIGN
+
+/* JOIN help file updated 26-3-93 */
+
+ ============== kermit =============
+OPT UP K Q ; select kermit uploads.
+OPT DOWN K Q ; select kermit downloads.
+
+KERMIT was originally developed at Columbia University, and that remains
+the central authority and repository for all versions of KERMIT.  The
+software is free, although there may be a distribution charge to cover
+costs.  It has been implemented on virtually all minicomputers, most
+mainframes, and nearly all microcomputers.
+
+CIX kermit supports three byte checksums, long packets, sliding windows,
+compression, etc.
+
+Kermit over IP running on a Unix or VMS machine
+-----------------------------------------------
+
+For anyone interested kermit over IP, both uploads
+and downloads work happily with the following settings (from the kermit
+defaults) at your local end.
+
+SET WINDOW 31
+SET SEND PACKET 1024
+SET BLOCK 3
+
+and don't forget SET FILE TYPE BIN for binary files.
+
+Kermit over IP running on a MSDos machine
+-----------------------------------------
+
+SET PORT BIOS1
+SET TCP/IP ADDRESS <address-machine>
+SET TCP/IP SUBNETMASK 255.255.0.0
+SET TCP/IP PRIMARY-NAMESERVER <address-of-primary-name-server>
+SET TCP/IP SECONDARY-NAMESERVER <address-of-secondry-name-server>
+SET TCP/IP GATEWAY <address-of-your-gateway-machine>
+SET TCP/IP DOMAIN <your-internet-domain>
+SET FILE TYPE BIN
+SET REC PAC 512
+SET SEND PAC 512
+SET PORT TCP/IP cix.compulink.co.uk
+
+Thanks to skapp@cix.compulink.co.uk for this information.
+ ============== killarc =============
+Command:   KILLARC - deletes the contents of your
+           archived scratchpad.
+
+Usage:     Deletes the contents of your archived scratchpad.
+
+Example:   From Main:   prompt type   killarc
+
+                 and you will receive the message
+
+                     Arc'ed scratchpad is deleted
+
+Notes:     If you don't use the command 'killarc' you
+           will be given the opportunity to delete it when
+           you log off using the 'bye' command.
+
+Example:   Main:bye
+           OK to delete your scratchpad.arc? (y/n)? Y
+           sthorn, you have been online 101:32 on ttya1
+           Goodbye from CIX     !!!HANGUP NOW!!!
+
+Notes:     If you don't delete your archived scratchpad it
+           will be saved until the next time you log on.  No
+           charges are made for storage, so we do ask you
+           delete your scratchpad before you log off when
+           possible.
+
+see also:  FILE, ARCSCRATCH, SCRATCHSIZE, DOWNLOAD, UPLOAD,
+           KILLARC
+ ============== killscratch =============
+Command:   KILLSCRATCH - deletes the contents of your
+           scratchpad.
+
+Usage:     Deletes the contents of your scratchpad.
+
+Example:   From Main:   prompt type   killscratch
+
+                 and you will receive the message
+
+                     scratchpad deleted
+
+Notes:     If you don't use the command 'killscratch' you
+           will be given the opportunity to delete it when
+           you log off using the 'bye' command.
+
+Example:   Main:bye
+           OK to delete your scratchpad? (y/n)? Y
+           sthorn, you have been online 101:32 on ttya1
+           Goodbye from CIX     !!!HANGUP NOW!!!
+
+Notes:     If you don't delete your scratchpad it will be
+           saved until the next time you log on.  No charges
+           are made for storage, so we do ask you delete
+           your scratchpad before you log off when possible.
+
+see also:  FILE, ARCSCRATCH, SCRATCHSIZE, DOWNLOAD, UPLOAD,
+           KILLARC
+ ============== last =============
+read <message-identifier> to last
+read last
+read backward last [to <message-identifier>]
+
+   "last" is another way of specifying which message you want to read.
+It is equivalent to the highest message number in the current topic.
+ ============== level =============
+
+COMMAND:        LEVEL
+PROMPT:         Mail:
+SYNTAX:         LEVEL <0, 1, 2>
+PURPOSE:        Change level of HELP
+
+If you are a newcomer to CIX, you may find the LEVEL command useful.
+
+Normally your help level is set to 0, level 1 or 2 provides a menu
+of commands available from which ever prompt you are at.
+
+Note: The level command works only from Mail:
+
+See also BUDDY, HELP
+
+/* LEVEL help command updated 26-3-93 */
+
+
+
+
+ ============== login =============
+Command:   LOGIN -- login to another CIX account.
+
+Prompt:    Main:
+
+Format:    LOGIN
+
+See also:  BYE
+
+Usage:     LOGIN acts like BYE, but retains your connection to CIX.  CIX then
+           writes a new "login:" prompt, where you may enter "cix" or "qix" in
+           the normal way.
+ ============== logout =============
+bye
+
+     The "bye" command will cause CoSy to remember how much of each conference 
+you have seen, and disconnect you from the system.
+
+    It is always advisable to enter "bye" before turning off your terminal, as
+this ensures that CoSy terminates properly, and saves "where you were".
+ ============== macro =============
+Main prompt:
+MACRO <macroname> <expansion>
+This will make macroname a macro that will be expanded whenever it
+is typed as a command.
+Recursive macros are possible, and make sense if including the TNEXT
+command
+Example: 
+MACRO EXIT BYE
+This will make EXIT behave as BYE.
+
+Related commands:
+OPTION SYNONYM <oldname> <newname>
+OPTION SUBSTITUTE <oldname> <newname>
+SHOW OPTION
+
+Here are some example CIX macros:
+
+Skip back a 5 days worth of messages in each of your topics
+-----------------------------------------------------------
+
+This is useful when coming back from holiday, or if you use an Offline 
+message reader with CIX which has blown up and you have lost a number of 
+days worth of messages, and its too late to use the RESTORE command.
+
+From the Main: prompt type:
+
+MACRO goback SKIP TO BACK 5 TNEXT GOBACK
+
+will set you up with a new command called GOBACK (name is optional)
+which skips back 5 days in the CURRENT (see next paragraph) topic,
+joins the next topic in your conference list and then re runs the
+macro.
+
+Because this script never joins a specific topic, you must join a
+topic first, preferably the first in your conference list, you can
+find this by typeing SHOW, joining the first conference that appears
+there and hitting <CR> to join the first topic. Now type GOBACK and
+CIX will skip around to the end of your conference list and then
+stop.
+
+If you put a HEADER command before the SKIP command in the macro, CIX
+will not display the full message is skips to, just the header.
+
+ ============== mail =============
+The CIX Mail System
+
+Type:
+
+MAIL <CR>
+
+from the Main: prompt to get into the mail system. From here you can send
+private mail to other CIX users, binary private mail and mail to users who
+are on other electronic networks around the world.
+
+When you first go into the Mail system, CIX will display your in and out
+baskets for you. Press <CR> to display the message at the top of your in
+basket on your terminal, or type in a message number to display that 
+particular message. Cix mail is only kept in your in basket for 30 days. 
+
+Sending a mail message
+----------------------
+To send a mail message, from the Mail: prompt type:
+TO <user>
+to get mail to another user on CIX. Or: 
+TO <user@site>
+for mail to a user on another electronic network.
+
+Replying to a mail message
+--------------------------
+To reply to a message, type:
+REPLY
+after reading the message you want to reply to. Or:
+REPLY <msg-no>
+to reply to a specific mail message.
+
+Once you have typed one of these commands, CIX will ask for a subject, 
+this is just a line that appears in the in and out baskets to help your
+and the recipient work out what the message is about without having to 
+read the message itself. On a reply the subject line is automatically
+the subject line of the original, thought this can be changed using the 
+subject command from the Send/action: prompt.
+
+Next, CIX will put you in the text gobbler, you can enter your message 
+here, ending with a . as the first character of a new line.
+
+You will now be at the send/action prompt, here you can press <CR> to send
+the message, change the subject line, re edit the message because you forgot
+something important, copy the message to someone else (called Carbon Copy
+or CC) or a couple of other things.
+
+Type:
+
+HELP EXTERNALMAIL   Introduction to sending mail out of CIX, how to 
+                    do Internet addressing and sending files by mail.
+HELP BINMAIL        for how to send binary files to other CIX users.
+HELP MAIL.CMDS      for all the commands from the Mail: prompt.
+HELP MAILSEND.CMDS  for all the commands from the Send/Action: prompt.
+HELP MAILFWD.CMDS   for all the commands from the Fwd/Action: prompt.
+ ============== mail.cmds =============
+Mail commands.
+ 
+   To [username]...............Start a new message to <username>.
+   [number]....................message <number>. If you do not specify
+                               a number, Cix will cycle through your 
+                               In-basket.
+   ALL.........................Reads all the new incoming mail.
+   CLear [In/Out]..............Clears messages from the in and out baskets
+   DElete......................Delete a message
+   DIR.........................Display private files
+   FORWARD.....................Forward a message to somebody
+   MARKUNREAD..................Mark unread a message
+   BINMAIL <user> <file>.......Send binary mail
+   INbasket....................Displays the inbasket
+   OUTbasket...................Displays the outbasket
+   SHow [options]..............See 'help show' for details
+   Quit........................Return to main Cix level
+   FILE ALL....................Sends all new mail to scratchpad
+
+Note that 'To' and 'number' will expect or display a message, then expect
+further commands to specify what you do with that message.
+ ============== mailfwd.cmds =============
+Forward-actions:
+
+Forward actions are essentially the same as "Send" actions, with some
+limitations.  (You cannot edit a forwarded msg, for example).
+
+    Cc <names>...........Add name(s) to the "Resent-Cc:" list of the message.
+    Help.................Display this message
+    Quit.................Return to Mail without sending.  Leave scratchpad
+                         intact.
+    Send.................Send the message to the distribution system, and
+                         clear the scratchpad.
+    To <names>...........Add name(s) to the "Resent-To:" field of the message.
+
+    Edit and Subject are not allowed
+ ============== mailread.cmds =============
+Read-actions:
+
+    Accept...............Remove the message from your In-Basket.
+    Delete...............  "     "     "      "    "     "
+    Forward <name>.......Forward the message to user <name>.
+    Help.................Display this message.
+    Reply................Start an new message TO the sender of the one
+                         you've just read.
+    Original.............If you have just read a reply to a message, this
+                         command tells COSY to display the original message.
+    Leave................Return to Mail, leave the message in In-Basket.
+    Quit.................  "     "  "      "    "    "      "    "
+ ============== mailsend.cmds =============
+Send-actions:
+
+    CC <names>...........Add name(s) to the CC list of the message.
+    CLear................Clear scratchpad and return to Mail.  Don't send.
+    Edit.................Edit the text of the message.
+    Help.................Display this message
+    Quit.................Return to Mail without sending.  Leave scratchpad
+                         intact.
+    Send.................Send the message to the distribution system, and
+                         clear the scratchpad.
+    Subject <text>.......Place the <text> on the "Subject:" line of the
+                         message.
+    To <names>...........Add name(s) to the TO: field of the message.
+ ============== main.cmds =============
+** Welcome to CIX (based on the CoSy Conferencing system) **
+
+   The novice user should only need to know the four basic commands:
+
+"show" will list all conferences which you are a member of.
+
+"join" will connect you to a conference.  If no conference-name is 
+       given, the first conference with unread text will be joined.
+
+"mail" allows you to send electronic mail to another CIX user.
+
+"bye"  terminates your CoSy session.
+
+   For help on any command, enter "help <command-name>".
+   For a quick reference on the options of a command enter "<command-name> ?"
+   For a list of all available help files, enter "help hfiles"
+
+ ============== markunread =============
+
+COMMAND:        MARKUNREAD
+PROMPT:         Mail:
+SYNTAX:         MARKUNREAD [<messagenumber>]
+PURPOSE:        Marks a mail message unread.
+
+This command allows you to change the status of a message in your
+inbasket. The command MARKUNREAD on its own simply toggles the last
+mail message you read. If followed by the message number you can
+selectively mark mail messages.
+
+/* MARKUNREAD help file updated 26-3-93 */
+
+ ============== mnp =============
+MNP MicroCom Network Protocol.
+
+A transparent error correcting protocol. Usually built into the modem.
+May be built into the comms program instead.
+
+Main varieties:
+MNP2  (just error correction - no linenoise)
+MNP5 includes compression, doubles transfer rate with text. No or little
+     effect with binary files.
+
+If you have MNP, you should probably set your modem to accept only MNP 
+when connecting to CIX, and to drop the line if a MNP-connection is not
+achieved (due to linenoise).
+
+ ============== moderate =============
+Command:   MODERATE -- maintain a conference.
+
+Prompts:   Main:  Read:  Mail:  Mod:
+
+Format:    MODERATE [NEW] [<confname>]
+
+Usage:     The NEW keyword allows you to create a new conference.  CIX then
+           prompts you for the details.
+
+Note:      Some commands available at the Mod: prompt apply to the whole
+           conference.  Others (such as FLIST) apply to a particular topic; if
+           you intend to use one of these commands, it may be convenient to
+           issue the MODERATE command at the Read: prompt.
+
+The following commands are available at the Mod: prompt:
+
+           ?............display a list of available commands
+           ADD..........add a participant or topic
+           COMOD........add another moderator (also at Read: prompt
+           EXMOD........remove another moderator (also at Read: prompt)
+           FDIR.........list the files in a topic (also at Read: prompt)
+           FLIST........edit the file list
+           HELP.........display brief help on the available commands
+           NEW..........create a new conference
+           NOTE.........edit the conference note
+           ORPHANS......display names of files not in the flist
+           PRUNE........physically erase withdrawn messages
+           QUIT.........exit the Mod: prompt
+           RDONLY.......flip a topic between read-only and read/write status
+           REMOVE.......remove participant or topic
+           TERMINATE....allow no more changes (This stops a conference!)
+           TOPICSIZE....display the current topic size and the size limit
+           VOTE.........make message a voting message
+
+Additionally, you may use the following commands at the Mod: prompt:
+BYE, JOIN, MODERATE, SHOW.
+
+The following moderator commands are available at the Read: prompt:
+
+           COMOD........add another moderator (also at Mod: prompt)
+           ERA..........erase a file
+           EXMOD........remove another moderator (also at Mod: prompt)
+           FDIR.........list the files in a topic (also at Mod: prompt)
+           FDL..........download a file (need not be in FLIST)
+           FEXPORT......copy a file to the filepool
+           REN..........rename a file
+           SCPUT FLIST..move scratchpad to flist (see also SCGET FLIST)
+           WITHDRAW.....withdraw a message
+ ============== moderate.cmds =============
+The following commands are available at the Mod: prompt:
+
+           ?............display a list of available commands
+           ADD..........add a participant or topic
+           COMOD........add another moderator (also at Read: prompt
+           EXMOD........remove another moderator (also at Read: prompt)
+           FDIR.........list the files in a topic (also at Read: prompt)
+           FLIST........edit the file list
+           HELP.........display this message
+           NEW..........create a new conference
+           NOTE.........edit the conference note
+           ORPHANS......display names of files not in the flist
+           PRUNE........physically erase withdrawn messages
+           QUIT.........exit the Mod: prompt
+           RDONLY.......flip a topic between read-only and read/write status
+           REMOVE.......remove participant or topic
+           TERMINATE....allow no more changes (This stops a conference!)
+           TOPICSIZE....display the current topic size and the size limit
+           VOTE.........make message a voting message
+
+Additionally, you may use the following commands at the Mod: prompt:
+BYE, JOIN, MODERATE, SHOW.
+
+The following moderator commands are available at the Read: prompt:
+
+           COMOD........add another moderator (also at Mod: prompt)
+           ERA..........erase a file
+           EXMOD........remove another moderator (also at Mod: prompt)
+           FDIR.........list the files in a topic (also at Mod: prompt)
+           FDL..........download a file (need not be in FLIST)
+           FEXPORT......copy a file to the filepool
+           REN..........rename a file
+           SCPUT FLIST..move scratchpad to flist (see also SCGET FLIST)
+           WITHDRAW.....withdraw a message
+ ============== new =============
+moderate new
+show new
+
+   "moderate new" will create a new conference.  You will be asked for
+a list of topics and the initial list of participants.
+
+   "show new" will list all conferences that you are a member of that
+have messages that you have not seen.  This is the command that executes
+when you first login to CoSy.
+ ============== newsnet =============
+Newsnet can be accessed by typing GO NEWSNET at the Main: prompt. 
+
+
+ ============== next =============
+Read: TNEXT
+Goes to next topic in list, (which could be in another conference) 
+irrespective of topic activity, not marking messages read
+
+Read: TPREV
+Goes to previous topic in list, (could be in next conference) 
+irrespective of topic activity, not marking messages read 
+
+Read: NEXT
+Goes to next active topic in list, (could be in next conference) 
+marking all messages read in current topic.
+
+ ============== nickname =============
+For those who want to change their nickname, please note the following-
+
+  * Make sure the new nickname is not currently in use. If a nickname
+is in use, or has previsouly been used, it cannot be used again.
+(Exceptions can be made in the case of people wanting their own old
+nicknames back.)
+
+  * Be aware that any e-mail sent to the old nickname cannot be
+auto-forwarded on. Make sure to let people who are likely to e-mail
+you know of the change.. BEFORE it happens.
+
+  * Be sure, also, to let any moderators of closed conferences you are
+in know of the change before it happens. They will need to be aware of
+the new nickname in their conference.
+
+  * Conferences that you are currently a moderator of will require
+particular attention.
+
+Bearing all this in mind mail cixadmin with details of what you require
+for the new name etc. and they will help arrange it for you.
+
+ ============== note =============
+Command:   NOTE -- edit the conference note or personal note.
+
+Prompt:    Mod:
+
+Format:    NOTE
+
+Usage:     NOTE allows you to enter or edit the conference note.  The
+           conference note (if any) is displayed in response to a
+           SHOW <confname> command, following the list of topics.
+
+Prompt:    Main:
+
+Format:	   EDIT NOTE
+
+Usage:     Your NOTE is displayed when a moderator adds you as a  
+           participant to a conference. It allows you to inform a 
+           moderator of your wishes regarding joining conferences.
+ ============== olr =============
+What is Blinking?
+
+This is the term used to describe someone logging onto CIX, downloading all
+their new messages and logging off again. The CIX messages can be read
+offline and perhaps replies to some messages can be created which can then
+be uploaded to CIX in a bundle.
+
+Blinking has taken off in the past couple of years with people using
+programs called OffLine Readers (OLR's) to handle all the messing around.
+There are OLR's for many computers and many operating systems, a list
+follows:
+
+System     Program        Contact            Support Conference
+
+Archimedes ReaderS        vulch    	     <unknown>
+Atari ST   Cixread        kebab              atari.st.olr
+Amiga      Nicola         tricky             nicola
+Amiga      Lucy           cgilliard          lucy.olr
+Mac        Semaphore II   pascal             semaphore.2
+Mac        Parlance       tricky, richardb   parlance
+PC         Matrix         iwatters    	     matrix
+Psion3a    ReadCIX        salex              ?
+Psion 5.x  CixEd          mfleeming          cixed
+Psion 5.x  Polar          cornelivs,gidds    polar_olr
+UNIX       clink          steveh   	     clink
+UNIX	   blink          abaddon            blink
+Windows    Ameol          ameoltech	     ameol
+Windows	   Matwin         dcraggs  	     matrix/matwin
+Windows    Virtual Access ashmount     	     ashmount
+
+I hope I haven't missed any out, if I have, please let me know (mat@cix)
+
+The idea of an OLR is to take the pain out of reading and replying offline.
+Most OLR's use simple scripts written in a comms package script language to
+handle the fileing and downloading of all your CIX messages, and whatever
+else you have asked for. The OLR then takes over and lets you read through
+the messages, replying when you like. When you reply to a message, the OLR
+makes a note of the message you replied to and the message you entered. As
+you go along it creates a CIX script which contains all the commands and
+text necessary to post your replies on CIX into the right places. Most
+OLR's will also handle files, you can view a file list, pick a file and on
+your next login to CIX your file will be downloaded.
+
+CIX now officially supports the AMEOL offline reader for more information
+type: HELP AMEOL or join ameol/files and type: FLIST, then download the
+latest version of AMEOL.
+ ============== online =============
+ONLINE
+      At the Main: prompt, ONLINE displays the number of minutes and 
+      seconds you have been using CIX.
+ ============== opt =============
+Command:   OPTION -- configure CIX to your settings.
+
+Prompts:   Main:  Read:  Mail:
+
+Format:    OPTION <option-command> [<option-command>...] QUIT
+
+Example:   option buddy yes reference yes quit
+
+Usage:     You may use the OPTION command interactively by entering just
+           OPTION.  Most option-commands take a parameter.  If you omit the
+           parameter then (depending on the option-command) CIX will use a
+           default, prompt you or write a brief description of the parameter.
+           You may find it useful to force a prompt or description by entering
+           a dummy parameter, such as "?".
+
+Notes:     1. Enter SHOW OPTION to display your current settings.
+
+           2. To make a permanent change to your settings, edit your profile
+              using the EDIT PROFILE command.  You cannot use OPTION
+              interactively here.  Remember to end the OPTION command with
+              QUIT!
+
+Here are some of the more common option-commands.  Enter HELP OPTIONS for a
+complete (and long!) description.
+
+BUDDY ON  .................  CIX guides you at each prompt.
+EDIT VERBOSE  .............  Use the verbose editor (default).
+EDIT A  ...................  Use the non-wrapping text gobbler for input;
+                             fullscreen editor for changes.
+TERMINAL PAGELENGTH <lines>  0 disables the "More?" prompt; output scrolls
+                             continuously.  Enter <control>X to cancel output.
+TERMINAL WIDTH <chars>
+AUTORECENT YES  ...........  Skip to recent messages when you register in a
+                             conference.
+RECENT <n>  ...............  Affects OPTION AUTORECENT and SKIP TO RECENT.
+REFERENCE YES  ............  CIX displays messages in reference order.
+COMPACTHEADER YES  ........  CIX displays message headers in compact form.
+STAY  .. (toggles on/off)..  Stay in a topic until you explicitly leave.
+FILE SINGLE YES  ..........  FILE READ ALL scans your conference list only
+                             once.
+SCRATCHPAD <bytes>  .......  Limit your scratchpad size when filing messages.
+UPLOAD <protocol>  ........  File transfer protocol for sending to CIX.
+DOWNLOAD <protocol>  ......  File transfer protocol for receiving from CIX.
+ZWINDOW <n>  ..............  ZMODEM window size.  0 causes streaming.
+ ============== option =============
+Command:   OPTION -- configure CIX to your settings.
+
+Prompts:   Main:  Read:  Mail:
+
+Format:    OPTION <option-command> [<option-command>...] QUIT
+
+Example:   option buddy yes reference yes quit
+
+Usage:     You may use the OPTION command interactively by entering just
+           OPTION.  Most option-commands take a parameter.  If you omit the
+           parameter then (depending on the option-command) CIX will use a
+           default, prompt you or write a brief description of the parameter.
+           You may find it useful to force a prompt or description by entering
+           a dummy parameter, such as "?".
+
+Notes:     1. Enter SHOW OPTION to display your current settings.
+
+           2. To make a permanent change to your settings, edit your profile
+              using the EDIT PROFILE command.  You cannot use OPTION
+              interactively here.  Remember to end the OPTION command with
+              QUIT!
+
+Here are some of the more common option-commands.  Enter HELP OPTIONS for a
+complete (and long!) description.
+
+BUDDY Y .................  CIX guides you at each prompt.
+EDIT VERBOSE  .............  Use the verbose editor (default).
+EDIT A  ...................  Use the non-wrapping text gobbler for input;
+                             fullscreen editor for changes.
+TERMINAL PAGELENGTH <lines>  0 disables the "More?" prompt; output scrolls
+                             continuously.  Enter <control>X to cancel output.
+TERMINAL WIDTH <chars>
+AUTORECENT YES  ...........  Skip to recent messages when you register in a
+                             conference.
+RECENT <n>  ...............  Affects OPTION AUTORECENT and SKIP TO RECENT.
+REFERENCE YES  ............  CIX displays messages in reference order.
+COMPACTHEADER YES  ........  CIX displays message headers in compact form.
+STAY  .. (toggles on/off)..  Stay in a topic until you explicitly leave.
+FILE SINGLE YES  ..........  FILE READ ALL scans your conference list only
+                             once.
+SCRATCHPAD <bytes>  .......  Limit your scratchpad size when filing messages.
+UPLOAD <protocol>  ........  File transfer protocol for sending to CIX.
+DOWNLOAD <protocol>  ......  File transfer protocol for receiving from CIX.
+ZWINDOW <n>  ..............  ZMODEM window size.  0 causes streaming.
+ ============== option.cmds =============
+OPTION
+
+Here are some of the more common options.  After you enter QUIT at the Opt:
+prompt, you may enter HELP OPTION for further information on the OPTION
+command or HELP OPTIONS for a complete (and long!) description of all
+available options.
+
+?  ........................  Display a list of available option-commands.
+HELP  .....................  Display this message.
+BUDDY ON  .................  CIX guides you at each prompt.
+TERMINAL PAGELENGTH <lines>  0 disables the "More?" prompt; output scrolls
+                             continuously.  Enter <control>X to cancel output.
+TERMINAL WIDTH <chars>
+AUTORECENT YES  ...........  Skip to recent messages when you register in a
+                             conference.
+RECENT <n>  ...............  Affects OPTION AUTORECENT and SKIP TO RECENT.
+REFERENCE YES  ............  CIX displays messages in reference order.
+COMPACTHEADER YES  ........  CIX displays message headers in compact form.
+STAY  .. (toggles on/off)..  Stay in a topic until you explicitly leave.
+FILE SINGLE YES  ..........  FILE READ ALL scans your conference list only
+                             once.
+SCRATCHPAD <bytes>  .......  Limit your scratchpad size when filing messages.
+UPLOAD <protocol>  ........  File transfer protocol for sending to CIX.
+DOWNLOAD <protocol>  ......  File transfer protocol for receiving from CIX.
+ZWINDOW <n>  ..............  ZMODEM window size.  0 causes streaming.
+ ============== options =============
+Command:   OPTION -- configure CIX to your settings.
+
+Prompts:   Main:  Read:  Mail:
+
+Format:    OPTION <option-command> [<option-command>...] QUIT
+
+Example:   option buddy yes reference yes quit
+
+Notes:     1. Enter SHOW OPTION to display your current settings.
+
+           2. To make a permanent change to your settings, edit your profile
+              using the EDIT PROFILE command.  Remember to end the OPTION
+              command with QUIT!
+
+Option-commands:
+
+?
+   Display a list of the option commands.  Note: this always leaves you at the
+   Opt: prompt.
+
+ANSI YES YES
+   Highlight the CIX prompts, using the default ANSI codes.
+ANSI YES NO
+   Highlight the CIX prompts.  CIX prompts you for the ANSI codes to use.
+   Enter HELP ANSI for further details.
+ANSI NO
+   This is the default setting.
+
+AUTORECENT YES | ON
+   Automatically skip to recent messages when you register in a conference or
+   re-join a topic from which you've resigned.  See also OPTION RECENT.
+AUTORECENT NO
+   This is the default setting.
+
+BACKWARD
+   Causes CIX to `rub out' its output (such as the More? prompt) using a
+   series of backspace characters.  Normally, CIX uses a combination of
+   backspace and space characters. There is no way to reverse this setting
+   other than by logging off and on again.
+
+BUDDY YES
+   At each prompt, CIX displays a list of valid commands.
+BUDDY NO
+   This is the default setting.
+
+COMPACTHEADER YES
+   Display message headers in compact form.
+COMPACTHEADER NO
+   Display message headers in expanded form.  This is the default setting.
+
+DOWNLOAD <protocol>
+   Specify the file transfer protocol to use when CIX sends you a file.
+   Specify the first letter of one of the following: Kermit, Xmodem,
+   CRC Xmodem, Ymodem, Zmodem.  See also the UPLOAD and ZWINDOW options.
+
+EDIT <editor>
+   Specify the editor to use when writing messages:
+   A:       Use a text gobbler for new messages; use the full-screen editor if
+            your scratchpad already contains a message.
+   B:       The full-screen editor
+   QUIET:   The quiet editor
+   VERBOSE: The default editor
+
+   Type: HELP EDITOR for more help with the CIX editors.
+
+FILE SINGLE YES
+   For FILE READ ALL, check each topic only once for new messages.
+FILE SINGLE NO
+   Check each topic for new messages, and continue checking until there are no
+   more new messages (someone might add a message during the FILE READ ALL).
+   This is the default setting.
+
+FILTER NO
+   Display special control characters in messages as ^A, ^B, etc.  This is
+   overridden by the RAW option.
+FILTER YES
+   Display special control characters in messages, unchanged.  This is the
+   default option.
+
+HEADER YES
+   Display only the header and first non-blank line of messages.  See also
+   OPTION MESSAGESIZE and the HEADER command.
+HEADER NO
+   Revert to displaying the complete text of messages.
+
+HELP
+   Display brief help on the OPTION command.
+
+MESSAGESIZE <bytes>
+   Set the maximum size of a conference message for reading or filing.  If the
+   size of a message exceeds the specification, only the message header and
+   first non-blank line are shown.
+
+MISSING YES
+   Include the headers and markers of withdrawn messages in the output of an
+   ALL or FILE READ ALL command.
+MISSING NO
+   Suppress withdrawn messages.  This is the default setting.
+
+RAW
+   Display any special characters in messages.  Messages are terminated with
+   an ETX ($03) character.  To toggle off this setting, issue OPTION RAW
+   again.
+
+RECENT <number>
+   Specify the number of messages for the SKIP TO RECENT command and the
+   AUTORECENT option.
+
+REFERENCE YES | ON
+   Display all comments to a message before displaying other messages.  See
+   also the REFERENCE command.
+REFERENCE NO
+   Display messages in numerical order.  See also the FORWARD command.
+
+SCRATCHNAME <name>
+   Specify the name (from 1 to 10 characters) of your scratchpad.  Any
+   existing scratchpad and/or ARC'd scratchpad is renamed.  (An ARC'd
+   scratchpad retains the .arc suffix.)
+
+SCRATCHPAD <bytes>
+   Specify the maximum size of your scratchpad for filing conference messages.
+   The last message is filed in its entirety, and will probably cause the
+   limit to be exceeded slightly.  This option has no effect when you file
+   mail or Usenet messages.
+
+STAY
+   Stay in a topic until you explicitly leave it (for instance, by issuing the
+   JOIN or QUIT command).  This is useful if you wish to file all messages in
+   a single topic (using FILE SKIP TO 1; FILE READ ALL).  Issue OPTION STAY
+   again to toggle off this setting.
+
+SUBSTITUTE <new> <old>
+   Substitute the command <new> for the command <old>.  See also the SYNONYM
+   option.
+
+SYNONYM <new> <old>
+   Make the command <new> a synonym of the command <old>.  See also the MACRO
+   command.
+
+TERMINAL ERASE {BACKSPACE | DELETE}
+   Specify the character you wish to use to erase the last character you
+   entered.  The default is BACKSPACE.
+
+TERMINAL PAGELENGTH <lines>
+   Specify the number of lines CIX displays between More? prompts.  You may
+   turn off the More? prompt and allow CIX to scroll continuously by
+   specifying a page length of 0.  (Enter <control>X to cancel output.)
+
+TERMINAL TYPE <type>
+   Specify your terminal type.  CIX recognises the following types in the
+   full-screen editor: ANSI, VT52, VT100, TVI920.
+
+TERMINAL WIDTH <characters>
+   Specify the width of your terminal.  A large value effectively disables
+   wordwrapping when you enter a message using the default (Verbose) editor.
+   
+TERSE
+   Use the abbreviated form of prompts and expanded message headers.  CIX
+   doesn't display a list of commands if you enter an invalid command.  See
+   also the TERSE command and the COMPACTHEADER and VERBOSE options.
+
+TIMEOUT <minutes>
+   Specify the interval after which CIX warns you you will be logged off --
+   if you don't enter a command, CIX logs you off after a further interval.
+   A value of 0 disables the inactivity timeout.  NB: the timeout is
+   automatically disabled when you are in CHAT mode or in an editor.
+
+UNIX YES
+   When you download a text file or ARC your scratchpad, lines are terminated
+   with LF (line feed) characters only.
+UNIX NO
+   Lines are terminated with CR (carriage return) and LF characters.  This is
+   the default setting.
+
+UPLOAD <protocol>
+   Specify the file transfer protocol to use when you send CIX a file.
+   Specify the first letter of one of the following: Kermit, Xmodem,
+   CRC Xmodem, Ymodem, Zmodem.  See also the DOWNLOAD option.
+
+VERBOSE
+   Use the long form of prompts and expanded message headers.  This is the
+   default setting.  See also the VERBOSE command and the TERSE command and
+   option.
+
+ZWINDOW <bytes>
+   Specify the size of the window for ZMODEM downloads.  A value of 0 causes
+   CIX to stream continuously.  The default size depends on the speed of the
+   modem connection.
+ ============== order =============
+(join) order
+
+   "order" will allow you to reorder your conference list so that conferences
+are read in the order you wish rather than the order of joining. The form of 
+the command is:  
+
+                    ORDER conf1 conf2 conf3 conf4 ...
+or
+                    ORDER FIRST conf1 conf2 conf3 conf4 ...
+or
+                    ORDER LAST conf1 conf2 conf3 conf4 ...
+
+This will move (conf1),conf2,conf3 ... to after conf1, or to the start, or
+to the end of the list.
+
+ ============== orphans =============
+Command:   ORPHANS -- list any files which are not in the flist.
+
+Prompt:    Mod:
+
+Format:    ORHANS [<topicname>]
+
+See also:  FDIR, FLIST
+
+Usage:     This command helps you maintain the flist by listing the names of
+           files which are in the topic directory but not in the flist.
+
+           If you entered the MODERATE command at the Main: prompt, you may
+           specify the topic name; if you entered MODERATE at the Read:
+           prompt, you should not specify the topic name.
+ ============== participants =============
+show participants
+show p fred
+add participants
+
+    Participants are the (other) people in CoSy.  Some may be registered in
+the same conference you are in, others may be members of other conferences.
+
+    You can see who is participating in your conferences (by joining them and
+doing a "show p"). You can also see all CoSy users via "show p all".  You
+can not tell who are participants in conferences you can not "join".
+ ============== password =============
+COMMAND:        PASSWORD
+PROMPT:         Main: Read:
+SYNTAX:         PASSWORD
+PURPOSE:        Change your password.
+
+It is a good idea to change your password regularly, maybe the one you
+have is too difficult to remember, or maybe you let someone know your
+CIX password to give them a demonstration. If that happens then change
+your password immediately.
+
+Remember that the case is important.
+
+/* PASSWORD help file updated 26/3/93 */
+
+ ============== print =============
+============SORRY==============
+-------------------------------
+Print is for In house CIX usage
+-------------------------------
+ ============== profile =============
+EDit PROfile
+ <logon>
+
+Your PROFILE is a file containing CIX commands which is executed
+whenever you log into CIX.  It can be used to set such options as
+your default editor, file transfer protocols, compact headers, 
+verbose or terse prompts , and so on.
+
+The default profile for new users is:
+
+news
+option down x q
+option up x q
+option edit v quit
+option autorecent on quit
+option recent 20 quit
+
+This displays the news, sets the up and download protocol to Xmodem, 
+selects the verbose editor, turns autorecent on and sets the autorecent 
+figure to 20.
+ ============== protocol =============
+File transfer protocols supported by CIX:
+
+Zmodem (recommended)
+Ymodem (useful)
+Xmodem (not recommended)
+Kermit (not recommended)
+
+ ============== prune =============
+Command:   PRUNE -- compress a topic.
+
+Prompt:    Mod:
+
+Format:    PRUNE [<topicname>]
+
+See also:  TOPICSIZE
+
+Usage:     Normally, a withdrawn message occupies the same space as the
+           original message.  The PRUNE command makes a new copy of the topic,
+           physically deleting any withdrawn messages.  This may be useful if
+           the topic is approaching its size limit.  (This limit applies to
+           all topics on CIX and cannot be changed by the moderator.)
+
+Notes:     1. The PRUNE command temporarily makes a topic read-only.
+
+           2. If you entered the MODERATE command at the Read: prompt, you
+              should not specify the topic name.
+
+           3. You may use the TOPICSIZE command to display the topic's size
+              and size limit.
+ ============== qed =============
+quiet editor
+ 
+The "quiet editor" is the Unix editor, which provides much more power and
+flexibility than COSY's verbose editor.  This particular editor is HCR's
+"ned", similar to "ed" and "ex".
+
+Editor commands all take the form
+   [addresses] command [parameters]
+An address can be a line number or range of numbers, or the symbol ".",
+representing the current line, or "$", representing the last line.
+Addresses are usually optional, with "." (current line) the default.
+A "+" or "-" before a number indicates a relative displacement.
+ 
+Commands are single letter commands.
+
+Parameters depend upon the command.  Regular expressions may be used in
+search strings.
+
+Some available commands  (default address shown in parentheses)
+------------------------
+(.)a
+<text>
+. 
+	append <text> after the addressed line (.), and keep doing so until
+	a "." is entered alone on a line.
+
+(.,.)c
+<text>
+. 
+	change the line(s) of text indicated to <text>.  Stop input with a
+	"." on a line by itself.
+ 
+(.,.)d
+	delete the current line or a range of lines.
+
+(.)i
+<text>
+. 
+	insert <text> before the current (or addressed) line.  Stop input
+	with "." on a line by itself.
+ 
+(.,.)p
+	print the current or addressed lines.  "p" may also be appended to
+	other commands (eg "dp" or "s/abc/xyz/p") to print the result.
+ 
+q
+	quit or exit the editor.  No automatic write of the file is done.
+ 
+(.,.)s[n]/string1/string2/
+	substitute the nth occurance of string1 on the addressed line(s)
+	with string2.  Add a "g" (global) to replace all occurances on the
+	line.  Default n=1.
+	In <string1>, "^" means the beginning of the line, "$" means the
+	end of the line, "." means any character.
+
+(1,$)w
+	write the addressed lines (default, the whole file) onto the given
+	file (ie the file you are editing).
+
+($)=
+	type the line number of the addressed line.  Default is the last
+	line number -- use ".=" to get the current line number.
+
+(1,$)g/string/<command>
+        on each line that 'string' is found on, perform the command
+ ============== quiet =============
+quiet editor
+ 
+The "quiet editor" is the Unix editor, which provides much more power and
+flexibility than COSY's verbose editor.  This particular editor is HCR's
+"ned", similar to "ed" and "ex".
+
+Editor commands all take the form
+   [addresses] command [parameters]
+An address can be a line number or range of numbers, or the symbol ".",
+representing the current line, or "$", representing the last line.
+Addresses are usually optional, with "." (current line) the default.
+A "+" or "-" before a number indicates a relative displacement.
+ 
+Commands are single letter commands.
+
+Parameters depend upon the command.  Regular expressions may be used in
+search strings.
+
+Some available commands  (default address shown in parentheses)
+------------------------
+(.)a
+<text>
+. 
+	append <text> after the addressed line (.), and keep doing so until
+	a "." is entered alone on a line.
+
+(.,.)c
+<text>
+. 
+	change the line(s) of text indicated to <text>.  Stop input with a
+	"." on a line by itself.
+ 
+(.,.)d
+	delete the current line or a range of lines.
+
+(.)i
+<text>
+. 
+	insert <text> before the current (or addressed) line.  Stop input
+	with "." on a line by itself.
+ 
+(.,.)p
+	print the current or addressed lines.  "p" may also be appended to
+	other commands (eg "dp" or "s/abc/xyz/p") to print the result.
+ 
+q
+	quit or exit the editor.  No automatic write of the file is done.
+ 
+(.,.)s[n]/string1/string2/
+	substitute the nth occurance of string1 on the addressed line(s)
+	with string2.  Add a "g" (global) to replace all occurances on the
+	line.  Default n=1.
+	In <string1>, "^" means the beginning of the line, "$" means the
+	end of the line, "." means any character.
+
+(1,$)w
+	write the addressed lines (default, the whole file) onto the given
+	file (ie the file you are editing).
+
+($)=
+	type the line number of the addressed line.  Default is the last
+	line number -- use ".=" to get the current line number.
+
+(1,$)g/string/<command>
+        on each line that 'string' is found on, perform the command
+ ============== quit =============
+     The "quit" command is used whenever you wish to exit the current level,
+and want to return to CoSy.  It is commonly used to exit from things like:
+ 
+mail
+read
+moderate
+and edit.
+ ============== rates =============
+The CIX service
+
+The integration of CIX Conferencing with a full Internet account provides
+CIX subscribers with an unrivalled suite of services. CIX provides one 
+service, with two different price tarifs, there are a number of additional 
+features which can be applied to either account listed below.
+
+The CIX ICA-SUT account
+
+The Standard User Tarif is designed for people who use CIX Conferencing, 
+Internet Mail, News and the Web a lot. This option gives unlimited access
+to CIX Conferencing and CIX Internet.
+
+Monthly flat fee:	14.99 pounds
+
+The CIX ICA-OUT account
+
+The Occasional User Tarif has been designed for subscribers who use the 
+conferencing system, and a small amount of Internet. This would be perfect
+for subscribers who use a lot of CIX Conferencing, Internet Mail, and News, 
+and perhaps an hour of Web browsing per month.
+
+Connection rates:	4p per minute cheap rate
+			6p per minute standard rate
+Monthly Minimum:	6.25 pounds
+
+
+Rates applying to all account types.
+
+Fax machine billing
+
+Normal UK Fax:             30 pence per page
+European Fax:              70p first page + 45p per additional page.
+Outside Europe Fax:        175p first page + 125p per additional page.
+
+
+(All prices are ex VAT).
+
+Standard rate is Mon - Fri 08:00 to 17:00.
+
+It is the logon time that determines whether it is peak or cheap.
+
+If you have any questions or queries email admin@cix.co.uk
+or telephone 020 8255 5000
+
+Prices are subject to change without prior notification.
+
+* Please type HELP AMEOL for information on the Ameol offline reader for CIX.
+or HELP OLR for more general help on Offline Readers for CIX.
+ ============== rdonly =============
+Command:   RDONLY -- toggle the read-only/read-write status of a topic.
+
+Prompt:    Mod:
+
+Format:    RDONLY <topicname>
+
+Usage:     If the topic is currently in read-write status, issuing the RDONLY
+           command will set it to read-only status.  This means that
+           participants cannot enter messages, but you as moderator may still
+           do so.  To return the topic to read-write status, issue the RDONLY
+           command again.  When you issue the RDONLY command, CIX confirms the
+           new status of the topic.
+
+Notes:     1. There is no default topic name for RDONLY.  If you don't specify
+              the topic name, CIX prompts you for it.
+
+           2. If a topic is read-only, CIX informs you of this when you join
+              it.
+ ============== read =============
+Command:    READ - to read the next message in a conference.
+
+Usage:     Although this command is one of the most
+           important functions of CIX, is very seldom
+           actually typed.  The reason for this is that
+           'read' is automatically invoked whenever there is
+           anything new to read, by just hitting <cr>.
+
+           'read' is more of an 'environment' than a
+           command.  When you are 'read'ing a conference,
+           the CIX prompt is 'Read:'.  You can examine the
+           conference messages in various ways, the easiest
+           is to just press <cr> and you will step through
+           any messages you have not yet seen.
+
+Notes:     For a complete list of the options available at
+           the 'Read:' prompt just type 'help' from the
+           'Read:' prompt.
+ ============== read.add.cmds =============
+Add-actions
+ 
+After typing in the text of your message, you have the following options:
+   Add.................Add the text as a message (or comment) and 
+                       clear your scratchpad.
+   Clear...............Clear your scratchpad and return to the Read: prompt.
+   COntinue............Continue entering text using the word wrapping text
+                       entry routine. (This text will be appended to the end
+                       of the scratchpad)
+   Edit................Invoke the text editor to edit or append text.
+   Help................Display this message.
+   List................Display the scratchpad so you can read your text
+   Quit................Return to the Read: prompt without adding a message.
+                       Your scratchpad will be left intact.
+ ============== read.cmds =============
+Enter one of:
+
+<null line>...........................see next message
+<number>..............................see message <number>
+<number> [ to <number> ]..............see messages in that range 
+ALL...................................see all new messages
+BAckward [ <number> [ to <number> ]]..see previous messages
+COMment...............................make a comment on the message being read
+COPy..................................copy a message or messages to another
+                                       conference
+DAte <date> [ to <date> ].............read messages added within time frame
+FILE READ ALL.........................file all unread messages (globally)
+FIrst [ to last ].....................read every (not just unseen) message 
+FOrward [ <number> [ to <number> ]]...re-set "backward" (and see that range)
+HEader................................see creator, time, and 1st line only
+NEXT..................................mark topic read.
+Quit..................................exit 'read' mode, return to Main: prompt.
+REFerence.............................see comments on the message last read.
+SKip <number>.........................do not see the next <number> messages
+SKip BACK <number>....................skip to current - number 
+SKip TO BACK <number>.................skip to today - number days
+SKip to <number>......................skip all messages up to <number>
+SAy...................................make a (non-associated) contribution
+SEarch <word>.........................search topic text for <word>
+SQUICK <word>.........................quick search topic text for <word>
+SWitchtopic <topicname>...............move to another topic in this conf
+TNEXT.................................go to next topic
+TPREV.................................go to previous topic
++.....................................current message + 1
+-.....................................current message - 1
+?.....................................available commands
+-----------------------------------------------------------------------
+<number> can be a number, or the words 'first' or 'last'
+See "help date" for information on how to specify <date>
+ ============== reference =============
+REFerence : ("Reading-by-reference" Mode and the REF command)
+
+Whilst reading through a conference, you may want to follow
+not the numerical order of messages, but the order in which messages were
+commented on, ie read a message, then read it's comments. The Reference
+mode allows you to do this. After reading a message, when you are at the
+Read: enter the command "REF" and if there is a comment, CIX will display it.
+It will also set you into "Reading-by-reference" mode. The Read: prompt
+will change to Read Ref:
+
+Whenever, you press <return> to read the next message in this
+mode, CIX will first display comments to the last message you read, so you
+will be able to read messages in context. To turn off Reference mode, enter
+FORWARD.
+
+If you are already in Reference mode and you enter "REF", CIX
+will still display the comment to the message you just read.
+
+If you want "Reading-by-reference" as a default add
+"OPT REF ON Q" to your profile. 
+ ============== remove =============
+Command:   REMOVE -- remove a participant or topic from a conference.
+
+Prompt:    Mod:
+
+See also:  REMOVE
+
+Format:    REMOVE PARTICIPANT <username> [<username>...]
+
+Format:    REMOVE TOPIC <topicname>
+ ============== ren =============
+Command:   REN <old-name> <new-name>
+
+Prompt:    Mail: and Read:
+
+It is often required to rename files either as a moderator from the Read:
+prompt in one of your conference topics or in your private directory from
+the Mail: prompt. 
+ ============== reply =============
+To reply to a just read mail message, type REPLY
+To reply to an old mail message type  <no> REPLY
+ ============== resign =============
+     "RESIGN <conference name>" command will "un-register" you from that
+conference.  It will no longer be listed when you do a "show", and any new
+messages appended to it can no longer be seen by you.
+
+   RESIGN <confname>/<topicname> will resign you from a topic.
+
+Registration
+------------
+    You can be come "registered" in a conference via one of 2 routes:    
+
+1) When "join"ing an open conference for the first time, you reply "yes" 
+   to the query "Do you wish to register?"
+
+2) When moderator adds you to the list of active participants.
+ ============== restore =============
+Command:   RESTORE -- restore your message pointers.
+
+Prompt:    Main:
+
+Format:    RESTORE
+
+See also:  CHECKPOINT, STORE
+
+Usage:     RESTORE resets your conference list to the state it had the last
+           time it was stored.  This may be useful if, for instance, you file
+           all new messages but then lose your scratchpad.
+
+Notes:     1. RESTORE restores your conference list *exactly* as it was.  If
+              you have joined (or been joined to by the moderator) a new
+              conference since your conference list was last stored, RESTORE
+              resigns you from that conference.
+
+           2. CIX automatically stores your message pointers the first time
+              you logon on a particular day, unless you were logged on at
+              midnight.
+
+           3. To restore your message pointers as they were when you logged on
+              to the current session, issue STORE then RESTORE.
+
+Command:   RESTORE -- reinstate a withdrawn message.
+
+Prompt:    Read:
+
+Format:    RESTORE [<msgno>]
+
+See also:  WITHDRAW
+
+Usage:     RESTORE reverses the effect of an earlier WITHDRAW command, unless
+           the moderator has permanently removed withdrawn messages by issuing
+           the PRUNE command.
+
+           The default message number is that of the last message you read.
+
+Notes:     1. CIX confirms the RESTORE command by displaying the message.
+
+           2. RESTORE may be used by participants and moderators.  Of course,
+              a participant may restore only a message he originated; a
+              moderator may restore only a message she (or a co-moderator)
+              withdrew.
+ ============== resume =============
+show resume
+edit resume
+show resume <participant>
+
+   The resume file contains your name, address, and whatever else you want
+other participants to know about you.
+ ============== root =============
+Read: ROOT
+goes to the root of the message chain of current message.
+
+ ============== run =============
+
+Command:   RUN -- Run various additional commands to the normal CIX commands
+           listed from the subsystem prompts. 
+
+Prompts:   Main: Read: and Mail:
+
+Format:    RUN <command>   (see table below)
+
+Example:   RUN INTERNET
+
+Command    What does it do?
+-------    ----------------
+newsnet    The Read Write Usenet Gateway - with threads..
+confstat   Conference statistic program.
+internet   The CIX Internet gateway
+filestats  Gives you information on number of file downloaded in a given topic.
+laston     Tells you when you last logged onto CIX.
+load       Gives you a indication of the current load on the machine.
+modlist    Tells you which conferences you moderate.
+
+ ============== say =============
+
+Prompt:		Read:
+
+Format:		SAY
+
+See also:	COMMENT
+
+Usage:		"say" will allow you to enter text (via edit of SCRATCHPAD)
+		that will become a root message in the conference/topic
+		you are currently reading.  See "help comment" for
+		details of how to make a comment to the last message
+		read.
+
+ ============== scgadd =============
+SCGADD
+
+Gets the contents of one of the following user files and appends to the text
+in your scratchpad:
+
+Profile, Resume, Script or a topics Flist.
+
+Usage:    SCGADD PROFILE|RESUME|SCRIPT|FLIST
+ ============== scget =============
+SCGET
+
+Gets the contents of one of the following user files and puts the text
+into your scratchpad:
+
+Profile, Resume, Script or a topics Flist.
+
+Usage:    SCGET PROFILE|RESUME|SCRIPT|FLIST
+ ============== scpadd =============
+SCPADD
+
+Gets the text from your scratchpad and appends to one of the following
+user files: 
+
+Profile, Resume, Script or a topics Flist if you are the moderator of
+that conference.
+
+Usage:    SCPADD PROFILE|RESUME|SCRIPT|FLIST
+ ============== scput =============
+SCPUT
+
+Puts the text in your scratchpad into one of the following user files:
+
+Profile, Resume, Script or a topics Flist if you are the moderator of
+that conference.
+
+Usage:    SCPUT PROFILE|RESUME|SCRIPT|FLIST
+ ============== scratchpad =============
+Your private textfile.
+You can upload to it, using UPLOAD
+You can download it , using DOWNLOAD
+You can delete it   , using KILLSCRATCH
+You can ask for size, using SCRATCHSIZE
+You can edit it     , using EDIT
+You can add it as a message
+You can send it as a mail message
+You are expected to delete it when you log off.
+
+The lines in the scratchpad are terminated with LF. But when archiving
+or downloading, the lines become CRLF terminated, unless you have set
+option Unix. When doing a Zmodem download you can inhibit the addition
+of CRs by setting an option in your comms program
+
+ ============== scratchsize =============
+SCRATCHSIZE
+        At the Main: prompt, SCRATCHSIZE displays the size of the SCRATCHPAD
+        and of the Archived SCRATCHPAD (If there is one)
+
+OPT SCRATCHPAD 4567 Q sets the maximum size of the scratchpad during filing.
+ ============== script =============
+The CIX Script Language
+
+A CIX script contains CIX commands. When you issue the SCRIPT command, CIX
+reads commands from the script instead from your terminal; when the last
+command in the script has been read, CIX returns control to your terminal.
+You can prepare your script offline, upload it to CIX and run it, so saving
+online time. Typically, you would use a script to enter messages in a
+conference and send mail messages.
+
+Entering conference messages:
+
+Scripts always use the Verbose editor, even if you have changed the editor in
+your profile. The Verbose editor automatically wraps lines at 10 characters
+less than the line width setting. Your message may be wider than this, so you
+should disable CIX's word wrapping by starting your script with the command:
+
+   OPTION TERMINAL WIDTH 999 QUIT
+
+Similarly, end your script with a command to reset the terminal width to 79
+(or whatever other width you have in your profile). The second line of your
+script will probably be a JOIN <command>.
+
+When you're commenting online to an earlier message, you would normally enter
+the command COMMENT: commenting, of course, to the message you've just read.
+When you write a script, you're unlikely to want to comment to the last
+message you've read, and you're quite likely to want to comment to more than
+one message. You can specify which message you want to comment to by
+including the message number: COMMENT <msgno>.
+
+Enter your comment in the script and finish it with a full stop (.) in the
+normal way. If you were commenting online, at this point CIX would display
+the Add/action: prompt. If you're running a script, though, CIX doesn't
+display the prompt (there's not much point!) Instead, your message is added
+directly CIX sees the full stop.
+
+If you use the SAY command in a script, CIX doesn't prompt you for the title:
+you simply enter the title as the first line of your message, *including* the
+`TITLE:' prefix.
+
+Entering mail messages:
+
+Much the same considerations apply to entering mail messages as to entering
+conference messages. One difference is that CIX expects a response to the
+Send/Action: prompt (even though it doesn't display the prompt!) This is so
+that you can, if you wish, use the CC response (to send one or more carbon
+copies) before responding SEND.
+
+Please note that at present, you cannot use the REPLY or COMMENT commands for
+mail in a script.
+
+Running the script:
+
+Start by uploading the script to your scratchpad by issuing the UPLOAD
+command. Then move the script from your scratchpad to your script area by
+issuing the SCPUT SCRIPT command. Finally, issue the SCRIPT command to run
+your script.
+
+Note that your scratchpad is cleared after the SCPUT command. If you want to
+amend your script before running it, you may issue the SCGET SCRIPT command
+and then edit it in your scratchpad by issuing the EDIT command. Note also
+that your script area is *not* cleared after the SCRIPT command. It is
+overwritten, however, by the next SCPUT SCRIPT command.
+ ============== search =============
+Command:   SEARCH -- display message numbers of messages containing a word.
+
+Prompt:    Read:
+
+Format:    SEARCH <pattern> [[FROM] <msgno>] [TO <msgno>]
+
+Example:   search widget 120 to 260
+
+See also:  FIND, SQUICK.
+
+Usage:     SEARCH looks in the current topic for the specified pattern and
+           displays the message numbers of the messages which contain the
+           pattern.  The pattern could be a word or a part of a word: it may
+           not contain spaces.  You may use a question mark as a wildcard
+           character, to match any single character.  For instance, "??dget"
+           would match "widget" or "gadget".  You could also use a question
+           mark to match a space if you wanted to locate two words.  For
+           instance, "ibm?pc" would match "IBM PC", provided the words were
+           not split across two lines.
+
+           If you specify only the pattern, SEARCH scans all messages in the
+           topic.  You may limit the search by specifying FROM <msgno> and/or
+           TO <msgno>.  You may omit the FROM keyword.  TO <msgno> specifies
+           the last message to be scanned (the range is inclusive).
+
+Notes:     1. SEARCH is case-insensitive: upper-case and lower-case letters
+              are treated equally.
+
+           2. The maximum length of the pattern is 14 characters.
+
+           3. The output from SEARCH looks like this:
+   
+              9999 : Text of the line where the pattern was found
+              9999 - A name
+
+              SEARCH uses the first format when it finds the pattern in the
+              text of a message.  It uses the second format when the pattern
+              matches the nickname in the message header.
+ ============== send =============
+  The "send" command will invoke an edit of SCATCHPAD to allow you to enter
+the text of MAIL.  Upon exiting the editor, MAIL will ask for the distribution
+list (who you wish to send the mail to).
+ ============== show =============
+SHOW
+   Show is a flexible command which allows you to get extra information
+   on conferences and users. Below are listed the variations of SHOW.
+
+SHOW
+  On it's own, SHOW displays the conferences you are joined to and where
+  you are relative to the last message in each topic.
+
+SHOW ALL
+  Lists all the conferences available on CIX
+
+SHOW ALL <string>
+  Lists all the lines in the conference list with <string> in it. For
+  example SHOW ALL PC or SHOW ALL GAMES
+
+SHOW <conferencename>
+  Shows the moderator, creation date, topics and titles and (if available)
+  the conference note for that conference
+
+SHOW NEW
+  List conferences that you are joined to that have unread messages to be
+  read
+
+SHOW OPTION
+  List the current value of various option settings.
+
+SHOW PARTICPANTS
+  List the members of the conference that you are presently joined to
+
+SHOW PARTICIPANTS ALL
+  List all the users of CIX
+
+SHOW PARTICIPANTS <conferencename>
+  List the members of the named conference 
+
+SHOW RESUME <username>
+  Show the Resume of the named user	
+
+SHOW STATUS
+  List the members of the conference you are currently joined to and when
+  they were last on
+
+SHOW STATUS <conferencename>
+  As SHOW STATUS but for the named conference
+
+SHOW WHO <string>
+  List all members of CIX with <string> in their name entry
+  Replace <string> with a * and you will get all members of CIX
+
+There is a quick reminder of these commands if you do SHOW ?
+ ============== show.cmds =============
+SHOW
+     <no option>...........list your conferences
+     All...................list all conferences
+     All <string>..........list titles with string
+     <conf>................list conference details
+     New...................conferences with activity
+     Participants..........members of a joined conference
+     Participants All......list members of the system
+     Participants <conf>...members of specified conference
+     PRICES <user>.........show users pricelist
+     Resume <participant>..resume of a member
+     Status................status of conference members
+     Who <string>..........list names with string
+     Who *.................list all users
+ ============== skip =============
+(read) skip <n>
+       skip to <n>
+       skip to back <n>
+       skip backward <n>
+
+   This will allow you to 'jump over' "n" messages.  These message will then
+be considered 'seen' or 'read', but can be reviewed by several of the "read"
+options later.
+   "Skip to <n>" will set your pointer to message number <n>, and consider
+all those after to be unread.
+   "Skip to back 5" will set your pointer to "five days ago"
+   "Skip backward <n>" is similar to "skip <n>", except that it allows you
+to "back up" in the message list.
+ ============== squick =============
+Command:   SQUICK -- display message numbers of messages containing a pattern.
+
+Prompt:    Read:
+
+Format:    SQUICK "<pattern>" [<no_of_days>]
+
+Example:   squick "widget" 2
+
+See also:  FIND, SEARCH.
+
+Usage:     SQUICK looks in the current topic for the specified pattern and
+           displays the message numbers of the messages which contain the
+           pattern.  The pattern must be within double quotation marks; this
+           means it may contain spaces.  You may use a question mark as a
+           wildcard character, to match any single character.  For instance,
+           "??dget" would match "widget" or "gadget".
+
+           If you specify only the pattern, SQUICK scans messages in the topic
+           from 7 days ago to the last message.  Following the pattern, you
+           may specify the number of days back to start the search.
+
+Notes:     1. SQUICK is case-insensitive: upper-case and lower-case letters
+              are treated equally.
+
+           2. The maximum length of the pattern is 77 characters.
+
+           3. The output from SQUICK looks like this:
+   
+              9999 : Text of the line where the pattern was found
+              9999 - A name
+
+              SQUICK uses the first format when it finds the pattern in the
+              text of a message.  It uses the second format when the pattern
+              matches the nickname in the message header.
+ ============== status =============
+STATUS
+     at the Mail: prompt, displays the in and outbaskets
+
+SHOW STATUS <confname>
+     Displays all the participants who are joined to that conference
+     and when they last logged on to CIX. This is available at most
+     prompts
+ ============== stay =============
+
+COMMAND:        STAY
+PROMPT:         Opt:
+SYNTAX:         OPT STAY Q
+PURPOSE:        Keeps you in a topic when no more unread there.
+
+This toggle will stop CIX automatically joining you to the next topic
+in your conference list when there are no more unread messages in the
+topic you are currently in. Use the TNEXT command to get to the next
+topic.
+
+This toggle is especially useful if you want to do a FILE READ ALL of
+particular topics.
+
+/* STAY help file updated 26-3-93 */
+ ============== store =============
+Command:   STORE -- store your message pointers.
+
+Prompt:    Main:
+
+Format:    STORE
+
+See also:  CHECKPOINT, RESTORE
+
+Usage:     For each of the conference topics to which you're joined, CIX keeps
+           a record of (pointer to) your current message.  STORE saves your
+           message pointers as they were when you logged in, or when you last
+           issued a CHECKPOINT command in the current session.
+
+Notes:     1. CIX automatically stores your pointers the first time you logon
+              on a particular day, unless you were logged on at midnight.
+
+           2. You may use RESTORE at the Main: prompt to restore your pointers
+              to the values they had before the previous manual or automatic
+              store.
+ ============== substitute =============
+OPTION SUBSTITUTE <newname> <oldname> Q
+Example:
+OPT SUBST EXIT BYE Q
+Bye will now be invalid as a command, exit used instead
+Related commands: 
+OPT SYNONYM <newname> <oldname> Q
+MACRO <newname> <expansion>
+
+ ============== switchtopic =============
+
+COMMAND:        SWITCHTOPIC
+PROMPT:         Read:
+SYNTAX:         SWITCHTOPIC [<topicname>]
+PURPOSE:        Move to another topic within a conference.
+
+This works from within a conference to switch to another topic in that
+conference. Typing SWITCHTOPIC on its own will prompt you with all of
+the topics in the conference you are joined to.
+
+In certain circumstances you will need the SWITCHTOPIC command to get
+into a topic. If you have resigned a single topic you will have to
+find all the topics using the SHOW <confname> command and then from
+any of the topics in the conference type SWITCHTOPIC <topicname>.
+
+/* SWITCHTOPIC help file updated 26-3-93 */
+ ============== synonym =============
+OPT SYNONYM <new> <old> Q ; make 'new' a synonym for the command 'old'
+ ============== terminal =============
+Terminal types supported are
+vt100 (default)
+tvi920, settable with OPT TERM TYPE TVI920 Q
+
+To use full screen editting set OPT EDIT B Q, or OPT EDIT A Q
+
+ ============== terminate =============
+Command:   TERMINATE -- shut down a conference.
+
+Prompt:    Mod:
+
+Format:    TERMINATE
+
+Usage:     TERMINATE shuts down a conference, and no messages may be added.
+           When you issue the command, CIX asks you to confirm that you really
+           want to terminate the conference.
+
+Note:      The conference is not immediately deleted, so participants may
+           still read messages.
+ ============== terse =============
+Mode:      TERSE - Gives you shorter CIX prompts and
+           messages.
+
+Usage:     There are two prompt and header modes of CIX.
+           Terse mode gives you shorter prompts like
+
+           M: for Main:   R: for Read:  and   Ml: for Mail:
+
+           as well as a shorter message header when reading
+           conference messages.
+
+Example:   From Main:     prompt type   terse
+                Read:     prompt type   terse
+                Mail:     prompt type   terse
+                Option:   prompt type   opt terse quit
+
+           Any of the above will put your current CIX
+           session, only, into terse mode.  To make this
+           permenant you must put it in your profile, by
+           editing your profile and entering the line
+
+           opt terse quit
+
+see also:   VERBOSE eg: help verbose - from Main: prompt.
+            PROFILE eg: help profile - from Main: prompt.
+ ============== time =============
+The "time" command will display the current date and time.
+
+ ============== tnext =============
+Read: TNEXT
+Goes to next topic in list, (which could be in another conference) 
+irrespective of topic activity, not marking messages read
+
+Read: TPREV
+Goes to previous topic in list, (could be in next conference) 
+irrespective of topic activity, not marking messages read 
+
+Read: NEXT
+Goes to next active topic in list, (could be in next conference) 
+marking all messages read in current topic.
+
+ ============== to =============
+(read) <number> to <number>
+       first to last
+       date <date> to <date>
+
+    The keyword "to" denotes a 'range' of messages to be displayed.
+Some of the 'message identifers' can be intermixed (eg "18 to last")
+ ============== topic =============
+(moderate) add topic
+(moderate) remove topic
+join <conference> [ <topic> ]
+next
+tnext
+tprev
+
+  Topics are enties that are groups of messages within conferences.
+Each topic starts at "first" and ends with "last".  When finished
+reading all new messages in the current topic, CoSy goes on to the
+next one automatically.
+ ============== topicsize =============
+Command:   TOPICSIZE -- display the current size and size limit of a topic.
+
+Prompt:    Mod:
+
+Format:    TOPICSIZE [<topicname>]
+
+See also:  PRUNE
+
+Usage:     Each topic has an upper limit to its size (this limit is
+           system-wide and cannot be changed by the moderator).  TOPICSIZE
+           displays this limit and the current size of the topic.
+
+Notes:     1. If you entered the MODERATE command at the Read: prompt, you
+              should not specify the topic name.
+
+           2. The only limit of a topic is the size limit.  There is no limit
+              on the number of messages.
+
+           3. You may use the PRUNE command at the Read: prompt to physically
+              delete any withdrawn messages and reclaim some space.
+ ============== tprev =============
+Read: TNEXT
+Goes to next topic in list, (which could be in another conference) 
+irrespective of topic activity, not marking messages read
+
+Read: TPREV
+Goes to previous topic in list, (could be in next conference) 
+irrespective of topic activity, not marking messages read 
+
+Read: NEXT
+Goes to next active topic in list, (could be in next conference) 
+marking all messages read in current topic.
+
+ ============== type =============
+Read: TYPE <filename> to view topic textfile.
+Mail: TYPE <filename> to view private textfile
+
+ ============== unix =============
+The UNIX option explained.
+
+Different operating systems use different methods to terminate lines in 
+text files. For instance, Unix uses a Line Feed (LF) and PC / MS Dos uses a
+Carriage Return and a Line Feed (CR/LF). So, when sending your scratchpad to
+your computer you may find the text is either all on one line, or that it has
+lots of ^M characters in it. Most text editors or word processing packages 
+can take either LF or CR/LF as the end of line character.
+
+The options you have are as follows:
+
+OPT UNIX N Q	Allows your Zmodem package to convert LF to LF/CR if enabled.
+OPT UNIX Y Q	Does not allow your Zmodem package to convert LF to LF/CR.
+ ============== upload =============
+upload
+------
+Main/Read Subsystem:
+    In the 'main' or 'read' subsystem, "upload" is used to transfer a file
+    from your micro into your COSY scratchpad (for addition to a conference,
+    using say or comment).
+
+upload <protocol>
+----------------- 
+Option Subsystem:
+    In the 'option' subsystem, you can define the transfer protocol to use
+    when uploading files.   Currently available are:
+
+	upload kermit
+	upload xmodem
+	upload crc-xmodem
+	upload ymodem
+	upload zmodem (default)
+
+example: OPT UP X Q
+
+Related commands:
+Read: FUL     ;upload file to topic
+Mail: FUL     ;upload private file
+For information on uploading programs type HELP FILES
+
+ ============== ved =============
+The verbose editor is the default editor.  If you have changed to another
+editor, you may revert to the verbose editor by entering OPT EDIT V Q.
+
+You enter the editor when you type "e" at the "add/action" or "send/action"
+prompt or when you issue the EDIT command (see HELP EDIT).
+
+All commands are one letter, shown below in brackets.
+
+(l)ist     displays your text from start to end.  Line numbers are also
+           displayed, which will be necessary if you wish to change or delete
+           a line.  You may also specify a line number or range of line
+           numbers.  For instance, you may enter "4l" to list line 4, or you
+           may enter "4,10l" to list lines 4 through 10.
+
+(a)ppend   allows you to add extra lines to your message.  If you enter "a" on
+           its own, the lines are added below the existing lines.  You may
+           also specify a line number.  For instance, if you enter "a4", the
+           lines are inserted between lines 4 and 5.  To leave append mode,
+           type a period (.) at the beginning of a new line, followed by
+           return.
+
+(d)elete   enters delete mode.  You will be asked which line number or range
+           of line numbers you wish to delete, or you may specify this
+           directly.  For instance, you may enter "d4" to delete line 4, or
+           you may enter "d4,10" to delete lines 4 through 10.
+
+(s)ubstitute
+           enters substitute mode.  You will be asked which line number you
+           wish to change, or you may specify this directly.  You may specify
+           a line number by using, for instance, "s4"; or you may specify the
+           last line by using "s*".  You will then be prompted to enter the
+           substitution.  For instance, to change "copmuter" to "computer",
+           enter "/copmuter/computer/".  If the text you wish to change
+           includes a slash character, you may use any other character instead
+           as the delimiter; for instance ";a/c;account;".  You may delete a
+           string; for instance "/ and//" deletes the word "and".
+
+           "." and "$" have special meanings in the "from" (first) string.
+
+           "." is a wildcard and matches any other character.  So to change,
+           for instance, "think. therefore" to "think, therefore", enter
+           "/think./think,/".  Using "/./,/" will change the first character
+           on the line to "," (since "." matches the first character).
+
+           "$" on its own matches the end of the line, so you may use this to
+           append to the line; for instance, "/$/ am./".  To change, for
+           instance, "$1" to "#1", enter "/$1/#1/".  Using "/$/#/" will append
+           "#" to the line.
+
+e(x)it     exits the text editor, and passes the text you have prepared back
+           to CIX.  This is the normal exit method.
+
+(q)uit     exits the text editor, but DOES NOT return your text to CIX.
+
+(h)elp     displays a brief summary of the available commands.
+ ============== vedhelp =============
+Command Meaning     Action
+
+  x     exit        Exit and save current scratchpad. 
+  a     append      Add additional text at end of scratchpad.
+  c     clear       Delete all lines from scratchpad.
+  d     delete      Delete one or more lines.
+  l     list        Show all lines with line numbers.
+  q     quit        Quit from editor, DON'T SAVE current scratchpad. This 
+		    option leaves you with the scratchpad you had before you 
+		    started editting.
+  s     substitute  Change part of an existing line.
+
+Enter HELP VED at the Main: Read: or Mail: prompt for more information.
+ ============== verbose =============
+Mode:      VERBOSE - Gives you full CIX prompts and
+           messages.
+
+Usage:     There are two prompt and header modes of CIX.
+           Verbose is the default mode, giving you the
+           longer prompts like
+
+                      Main:  Read: and  Mail:
+
+           as well as a more verbose message header when
+           reading conference messages.
+
+Example:   From Main:     prompt type   verbose
+                Read:     prompt type   verbose
+                Mail:     prompt type   verbose
+                Option:   prompt type   opt verbose quit
+
+           Any of the above will put your current CIX
+           session, only, into verbose mode.  To make this
+           permenant you must put it in your profile, by
+           editing your profile and entering the line
+
+           opt verbose quit
+
+see also:   TERSE   eg: help terse - from Main: prompt.
+            PROFILE eg: help profile - from Main: prompt.
+ ============== vote =============
+Command:   VOTE -- register your vote on a voting message.
+
+Prompt:    Read:
+
+Format:    VOTE
+
+Usage:     The VOTE command applies to the message you have just read.  When
+           you enter the VOTE command, CIX displays the list of voting options
+           and prompts you to enter the number of the option for which you
+           wish to vote.
+
+Notes:     1. You may vote on only one message during a session.
+
+           2. An ordinary mssage may be converted into a voting message by the
+              moderator.  A voting message is indicated by a line in the
+              header, or by a "V" in a compact header.  Underneath the body of
+              the message, CIX displays the voting options and the votes
+              registered so far.  (The voting options are not included in the
+              character count in the header -- this may confuse some offline
+              readers.)
+
+Command:   VOTE -- add voting options to a message.
+
+Prompt:    Mod:
+
+Format:    VOTE [<topicname>] [<msgno>]
+
+Usage:     If you entered the MODERATE command at the Main: prompt, CIX needs
+           to know the topic name; if you don't specify it with the VOTE
+           command, CIX prompts you.  If you entered the MODERATE command at
+           the Read: prompt, you mustn't specify the topic name.
+
+           If you entered the MODERATE command at the Main: prompt, the
+           default message number is that given by your current pointer.  If
+           you entered the MODERATE command at the Read: prompt, the default
+           message number is that of the last message you read.  The message
+           must not have been deleted.
+
+           CIX prompts you for up to 9 lines of up to 39 characters.  When you
+           have entered enough lines, enter QUIT.  You then have a chance to
+           change any of the lines.  Finally, you may save the voting options
+           or quit without saving them.  Once you have saved the voting
+           options, you may not change or delete them.
+ ============== vt100 =============
+If using Odyssey's vt100 emulator, disable the menu-line, so
+that you have 24 lines of screen. Otherwise you will have
+problems.
+ ============== who =============
+Command:    WHO - Shows you who is online at the moment.
+
+Usage:     When your logged onto CIX it's good to know who
+           is online at the same time as you, you may want
+           to 'chat' with someone.  The 'who' command will
+           display the nicknames of all users who are
+           currently online.
+
+Example:   From Main:    prompt type   who
+                Read:    prompt type   who
+                Mail:    prompt type   who
+
+Notes:     The 'who' command is also a keyword and may be
+           used in conjunction with the 'show' command.
+
+Example:   From Main:    prompt type   show who peter
+
+           will list all users who have peter in their
+           nickname or their real name.
+
+see also:  SHOW, RESUME
+ ============== wildcards =============
+Wildcards ? and * are allowed many places, like in
+FDL *
+
+Notice that as CIX is running on a UNIX system, * will
+match all files, whereas *.* will only match files with
+an extension. This is different from MSDOS.
+
+ ============== withdraw =============
+CONVERSE:
+    The "withdraw ####" command removes conv file "####" 
+This command can be used to terminate or cancel a conversation, or to retract
+a message.
+
+READ:
+    In the read subsystem, "withdraw ##" will flag message number "##" as
+withdrawn by the author, so that the text will no longer be visible.  You
+must be the originator of a message to be able to withdraw it.
+
+ ============== wordwrap =============
+Wordwrap is supported in the default textgobbler. There it results in
+garbling of the screen output.
+
+This garbling does not occur if OPT EDIT A Q is set. But then you dont
+have wordwrap.
+
+ ============== xmodem =============
+Xmodem file transfer potocol by Ward-Christensen.
+Blocksize typically 128 bytes, but can be 1024 bytes.
+Each block is ended with a checksum (or a CRC).
+This protocol is classic and easy to implement. (but not always
+implemented correctly).
+Xmodem becomes very slow if the reply to each block is delayed,
+it is therefore very slow across MNP and high speed links.
+It really is an outdated protocol, and Zmodem should be preferred.
+
+ ============== ymodem =============
+Ymodem file transfer protocol. This a batch protocol, where the filename
+is specified by the sender, not by the receiver.  Several files can be
+transferred in one go. Blocksize can vary from 128 bytes to 1024 bytes.
+
+Many comms programs have several variations of Ymodem. The proper
+one is often called 'batch ymodem' in these programs.
+Your comms program/modem must not use XON/XOFF while doing Ymodem!
+
+ ============== zmodem =============
+Zmodem. Chuck Forsbergs file transfer protocol.
+     The preferred file transfer protocol.
+     It is fast, reliable, and an interrupted file transfer can be
+     resumed.
+     You should not have a an inacticitivy timeout in your modem, if you
+     use this protocol, otherwise your modem will sometimes drop the
+     line.
+     When downloading your scratchpad lines will become terminated with
+     CRLF if you have set your Zmodem options correctly
+

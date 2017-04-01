@@ -1,0 +1,98 @@
+NEW FEATURES OF CIX
+
+Please read these pages as an addition to the CIX manual.
+
+New GO commands
+---------------
+
+All of the following commands are available from the Main: prompt.
+
+commands	Displays on screen a list of all commands available from the go prompt.
+
+confstats	Displays statistics about a conference. To use this commands, join a
+conference, then type go confstats at the Read: prompt.
+
+This command displays general information about the conference, its moderators, number of
+topics and messages, and asks if you want information about specific topics. Information on
+topics includes name, number of messages and files, date of last message, number of
+messages posted in the last day and last week, and the total size of the topic.
+
+olrconfstat	Performs in a similar manner to confstat above, but files the information to
+your scratchpad to be downloaded.
+
+filestats	Displays a list of the number of times files in a topic have been downloaded.
+
+olrfilestats	Performs in the same way as filestats above, but files the information to your
+scratchpad to be downloaded.
+
+laston		Displays the time you last logged in.
+
+listhelpfiles	Files a list of helpfiles and sizes to your scratchpad to be downloaded.
+
+load		Displays processor load and uptime.
+
+modlist		Displays the list of conferences of which you are a moderator.
+
+mystery		Try it and see!
+
+
+New commands in the Internet Subsystem
+
+?	Help
+dossify	Converts long filenames into the DOS 8.3 naming convention. Supply the filename to
+dossify as an argument to the command.
+
+opt	Sets options. Opt download sets the choice of upload and download protocol: options
+are zmodem, xmodem ,ymodem and windowed zmodem. Opt window <window_size> sets
+the size of the Zmodem window, 0 disables. Opt term <term_type> where term_type is VT100
+or TTY sets the type of terminal program you are using.
+strip	Removes illegal characters from a filename. Supply the file to strip as an argument to
+the command.
+
+
+Cix Commands
+------------
+
+The following CIX commands have been documented since the last version of the manual:
+
+bit8	Enables and disables a full 8-bit character feed from CIX. Disabling this will force CIx
+to strip the top bit of characters sent to your terminal or OLR. Syntax: opt bit8 y|n q
+
+echo	The echo command is available at the main prompts of COSY, but its main use is
+within your profile. It causes everything on the rest of the line to be echoed back to your
+terminal. Thus, in your profile it can be used to put text on the screen during the login process.
+level	Level adjusts the amount of help you are given online. Normally your help level is set
+to 0. Level 1 or 2 provides a menu of commands available from which ever prompt you are at.
+Note: The level command works only from Mail:
+
+news	Displays special messages from CIX  - this command normally appears at the
+beginning of your profile.
+
+note	Edits the conference note or your personal note.
+Note from the Mod: prompt allows you to enter or edit the conference note. The conference
+note (if any) is displayed in response to a SHOW <confname> command, following the list of
+topics.
+Edit Note edits the note which is displayed when a moderator adds you as a participant to a
+conference. It allows you to inform a moderator of your wishes regarding joining conferences.
+
+raw	The raw setting displays any special characters in messages. Messages are
+terminated with an ETX ($03) character. To toggle off this setting, issue opt raw again.
+
+scgadd	Gets the contents of one of the following user files and appends to the text in your
+scratchpad: Profile, Resume, Script or a topics Flist.
+
+scpadd	Gets the text from your scratchpad and appends to one of the following user files:
+Profile, Resume, Script or a topics Flist (if you are the moderator of that conference.)
+
+status	At the Mail: prompt, displays the in and outbaskets. At the Main: or Read: prompts,
+show status <confname> displays all the participants who are joined to that conference and
+when they last logged on to CIX.
+
+time	Displays the current time of day.
+
+workfile	Edit workfile (at the Read: prompt) edits the conference workfile. The workfile may be
+jointly changed by any conference member. Uses might include a working paper.
+
+xtra	At the send/action: prompt, specifies an extended mail header field. Typing xtra
+prompts once for two paramaters, separated by a space,  for instance "OLR Ameol"  would
+produce the extended mail header "X-OLR: Ameol".

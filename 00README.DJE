@@ -1,0 +1,6 @@
+Cix Manual 95 downloaded from cix.support/files in two files
+
+Cixman.txt converted to html 2005-12-08
+
+Do not check in the file using ci - use make ci instead. This converts the line
+endings from MSDOS to Unix.
