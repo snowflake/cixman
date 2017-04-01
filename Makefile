@@ -3,7 +3,7 @@ ZIPDIR=/root/software/cixman
 
 all:
 	@echo read the makefile
-	
+
 ci:
 	cp cixman.html cixman.html.tmp
 	cat cixman.html.tmp | tr -d '\015' > cixman.html
@@ -18,6 +18,8 @@ zip:
 cm:	ci
 	zip cm cixman.html
 
+valid:
+	onsgmls -s cixman.html
 
 export-git:
 	make -f export-to-git.mk all push
