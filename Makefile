@@ -18,3 +18,7 @@ zip:
 cm:	ci
 	zip cm cixman.html
 
+
+export-git:
+	make -f export-to-git.mk all
+ 
