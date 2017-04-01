@@ -20,5 +20,6 @@ cm:	ci
 
 
 export-git:
-	make -f export-to-git.mk all
+	make -f export-to-git.mk all push
+
  
