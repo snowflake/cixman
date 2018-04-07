@@ -8,3 +8,5 @@ git.
 Discussion about the manual takes place
 in the cixman.html conference.
 
+All files here use Unix/Linux/BSD/MacOS line endings.
+
